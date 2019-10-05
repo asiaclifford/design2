@@ -3201,9 +3201,7 @@ btn-link
 /* -----------------------
 2.3  Cards
 -------------------------*/
-.card{
-height: 800px;
-}
+
 .card {
     margin-bottom: 30px;
     border: none;
