@@ -1,0 +1,213 @@
+<html><head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <link rel="stylesheet" type="text/css" href="../frank/frank.css">
+   <meta name="CVS" content="$Id: 1doc.html,v 1.3 2005/10/06 09:56:36 frank Exp $">
+   <meta name="description" content="The Giant Internet IC Masturbator">
+   <title>The Giant Internet IC Masturbator</title>
+</head><body><h1>Documentation.</h1>
+
+Pin identification, truth tables and shortcuts to make the individual
+entries as small as possible.
+<p>
+<hr>
+<h2>PIN IDENTIFICATION</h2>
+<p>
+<h3>General:</h3>
+<ul>
+<li>Missing pins have no pin number.
+<li>Unconnected pins and test pins that should be left floating have no
+   identification.
+<li>Clock signals are identified by CLK for positive-edge triggering or /CLK
+   for negative-edge triggering.
+<li>Reset (clear) inputs are identified by RST.
+<li>Set inputs are identified by SET.
+<li>For 3-state devices, output enables are indicated by OE.
+<li>When a pin has two modes, or selects between two operations, then the
+   two may be separated by a slash.  An inversion slash may still be present
+   as in SH//LD for shift or load select.
+<li>Pins that have more than one function (selected by programming or the state
+   of another pin) are indicated by both functions separated by a space.
+</ul><p>
+<h3>Power supply:</h3>
+<ul>
+<li>The main power supply is indicated by VCC.
+<li>System ground is indicated by GND.
+<li>A secondary positive power supply may be indicated by VDD.
+<li>A negative power supply is indicated by VEE.
+<li>Programming power supply (usually higher than VCC) is indicated by VPP.
+</ul><p>
+<h3>Gates, line drivers etc.:</h3>
+<ul>
+<li>Inputs are identified by letters starting from A.
+<li>Outputs are indicated by Y.
+</ul><p>
+<h3>Flip-flops:</h3>
+<ul>
+<li>Inputs are identified by J and K, or D.
+<li>Outputs are indicated by Q.
+</ul><p>
+<h3>Counters:</h3>
+<ul>
+<li>Load inputs are indicated by P followed by the counter stage number.
+<li>Outputs are indicated by Q followed by the counter stage number.
+   Thus (assuming a binary counter) Q0 is the /2 output, Q1 the /4 output.
+</ul><p>
+<h3>Shift registers:</h3>
+<ul>
+<li>Parallel inputs or bidirectional parallel I/O pins are identified by P
+   followed by the shifter stage number. The leftmost stage in a shift
+   register is number 0.
+<li>Serial inputs are identified by letters starting from D (for right shift)
+   or from L (for left shift).  If more than one of either is available,
+   the letter is followed by the shifter stage number it feeds.
+<li>Serial outputs are identified by Q, which may be followed by the shifter
+   stage number if more than one serial output exists.
+<li>Parallel outputs are identified by Q (only if no serial outputs exist),
+   Y (3-state outputs or output latch) followed by the shifter stage number.
+<li>Unidirectional shift registers shift towards higher stage numbers.
+<li>Bidirectional shift registers have separate shift-left and shift-right
+   serial inputs.
+<li>Parallel-in parallel-out shift registers are called univeral.
+</ul><p>
+<h3>Multiplexers:</h3>
+<ul>
+<li>Inputs are identified by A followed by a number.
+<li>Outputs are indicated by Y.
+<li>Select inputs are identified by S followed by a number starting at 0,
+   unless there is only one select input in which case only S is specified.
+   When the S inputs are taken as a binary number, the value indicates
+   which input is selected.
+</ul><p>
+<h3>Demultiplexers:</h3>
+<ul>
+<li>Inputs are indicated by A, preceded by a section number if more than one.
+<li>Outputs are identified by Y followed by a number.  When there is more than
+   one multiplexer section, inputs are prefixed by a number indicating to
+   which section they belong.
+<li>Select inputs are identified by S followed by a number starting at 0,
+   unless there is only one select input in which only S is specified.
+   When the S inputs are taken as a binary number, the value indicates
+   which output is selected.  For noninverting demultiplexers unselected
+   outputs are 0, for inverting demultiplexers they are 1.
+</ul><p>
+<h3>Analog multiplexers/demultiplexers:</h3>
+<ul>
+<li>Analog switches generally are bidirectional, and inputs and outputs can
+   therefore be reversed.
+   One side of the switch is indicated by X (optionally followed by a number),
+   the other side is indicated by Y.
+<li>Select inputs are identified by S followed by a number starting at 0,
+   unless there is only one select input in which only S is specified.
+   When the S inputs are taken as a binary number, the value indicates
+   which switch is selected.
+</ul><p>
+<h3>Memories:</h3>
+<ul>
+<li>Address inputs are indicated by A followed by the bit number, starting
+   from 0.  Multiport memories use RA or WA for separate read and write
+   addresses, or A prefixed by the port number followed by the bit number.
+<li>Data inputs or data I/O are indicated by D followed by a number starting
+   from 0.
+<li>Data outputs are indicated by Q followed by a number.
+</ul><p>
+<h3>Oscillators:</h3>
+<ul>
+<li>One-inverter oscillators are indicated by X0 and X1 pins, where X0 is
+   the inverters' output and X1 is the input.  If I happen not to know which
+   is which, the pins are indicated by X1 and X2.  A crystal oscillator
+   usually requires a crystal parallel to a 10M resistor, with two small
+   capacitors to ground; but sometimes only a crystal is needed -- most
+   often when a 32kHz watch crystal can be used.
+<li>Two-inverter oscillators are indicated by X1 (input), X0 (middle node)
+   and X2 (output).  A crystal oscillator can then be made using X0 and X1.
+</ul><p>
+<h3>Sections:</h3>
+<ul>
+<li>When a device has several (largely) independent sections, I/O pins
+   are prefixed by the section number, starting from 1, as in 1J or /1Q.
+<li>Multi-bit functions, such as counters or 3-state buffers have I/O pins
+   suffixed by the bit number, usually starting from 0 (except sometimes
+   for counters which may have some outputs missing).
+<li>The section/bit numbering is used in a different way for (de)multiplexers.
+</ul><hr>
+<p>
+<h2>TRUTH TABLES</h2>
+<p>
+For inputs, the following notations are used:
+<pre>
+   0  : logic low level
+   1  : logic high level
+   X  : don't care, either 0 or 1
+   /  : rising or positive-edge clock input
+   \  : falling or negative-edge clock input
+   !/ : not a rising edge, either 0, 1 or \
+   !\ : not a falling edge, either 0, 1 or /
+   .  : 'continued', used in compressing the table
+</pre>
+<p>
+For outputs, the following notations are used:
+<pre>
+   0 : logic low level
+   1 : logic high level
+   Z : high impedance, either 3-state or open-collector not driving output
+   - : no change (latched in closed state, or register value not changed)
+   ? : undefined (although some manufacturers may define a behaviour)
+   . : 'continued', used in compressing the table
+</pre>
+<p>
+<h2>ASSUMPTIONS FOR DIGITAL DEVICES</h2>
+<p>
+<h3>Single/Dual Flip-flops:</h3>
+<ul>
+<li>The clock is positive-edge triggered.
+<li>Complementary outputs are available.
+</ul><p>
+<h3>Multiple flip-flops:</h3>
+<ul>
+<li>Only inverting or noninverting outputs are available.
+</ul><p>
+<h3>Synchronous counters:</h3>
+<ul>
+<li>The clock is positive-edge triggered.
+<li>LOAD,SET and RESET are synchronous.
+</ul><p>
+<h3>Asynchronous counters:</h3>
+<ul>
+<li>The clock is negative-edge triggered.
+<li>LOAD,SET and RESET are asynchronous.
+</ul><p>
+<h3>Shift registers:</h3>
+<ul>
+<li>The clock is positive-edge triggered.
+<li>LOAD and RESET (if available) are synchronous.
+</ul><hr>
+<p>
+<h2>ASSUMPTIONS FOR ANALOG DEVICES</h2>
+<p>
+<h3>Operational amplifiers:</h3>
+<ul>
+<li>VCC usually is +15V, VEE -15V.
+<li>For single/dual-supply op-amps, VEE can be connected to GND.
+</ul><p>
+<h3>Analog multiplexers/demultiplexers:</h3>
+<ul>
+<li>Analog switches generally are bidirectional, and inputs and outputs can
+   therefore be reversed.
+   One side of the switch is indicated by X (optionally followed by a number),
+   the other side is indicated by Y.
+<li>Select inputs are identified by S followed by a number starting at 0,
+   unless there is only one select input in which only S is specified.
+   When the S inputs are taken as a binary number, the value indicates
+   which switch is selected.
+<li>Select and enable inputs are at TTL level, except for 4000-series CMOS
+   where these inputs must swing between GND and VCC.
+</ul><p>
+<h3>Digtal/analog converters:</h3>
+<ul>
+<li>Select and data inputs are at TTL level.
+<li>Current output DACs may have both OUT and inverted /OUT output
+   current pins.
+</ul>
+<hr><a href="index.html">Back to the GIICM index.</a>
+</body>
+</html>

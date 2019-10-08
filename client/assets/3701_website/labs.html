@@ -1,0 +1,491 @@
+<HTML>
+<HEAD>
+<TITLE> Digital Logic & Computer Systems: Lab</TITLE>
+</HEAD>
+
+<ul>
+ <b>Don't forget:</b>
+<ul>
+<li>Canvas submissions are due 15 minutes <B><u>BEFORE</u></B> the start of your lab.
+<li>Complete the required material before coming to lab or you may be denied entry. 
+<li>Your labs are precisely 1 hr and 55 min. You will be given <B>NO</B> extra time.
+<li>You must show up within the first <B>10 minutes</B> of your lab starting to be eligible to take the lab quiz.
+<li> Lab quizzes may start when lab begins.  If you miss a quiz, you get a zero on that quiz.
+<li>You must show up within the first <B>20 minutes</B> of your lab starting time or you will not be admitted.
+<li> Labs meet in <a href="admin/lab_schedules_f19.htm"> NEB 248.</a><br> 
+</ul>
+</ul>
+
+ <CENTER>
+ <TABLE BORDER=1 CELLSPACING=0 cellpadding=5>
+ <TR>
+  <TD COLSPAN=3 ALIGN=CENTER VALIGN=CENTER>
+    <FONT SIZE=+3><B>Lab Documents</B></FONT>
+  </TD>
+ </TR>
+ <TR>
+  <TH ALIGN=CENTER VALIGN=CENTER>
+    <FONT SIZE=+1>Lab</FONT>
+  </TH>
+  <TH ALIGN=CENTER VALIGN=CENTER>
+    <FONT SIZE=+1>Start Date</FONT>
+  </TH>
+  <TH ALIGN=CENTER VALIGN=CENTER>
+    <FONT SIZE=+1>Documents</FONT>
+  </TH>
+ </TR>
+
+ <TR>
+  <TH ALIGN=CENTER VALIGN=CENTER> </TH>
+  <TH ALIGN=CENTER VALIGN=CENTER> </TH>
+  <TD ALIGN=LEFT VALIGN=CENTER>
+
+<LI> 	<a href="admin/Lab Rules & Policies.pdf"> Lab Rules & Policies
+		<B>(R0 - Fall 2019)</B></a>
+<LI> Lab submission template <B>(R1)</B>: <a name="template">
+	<a href="admin/Lab_Submission_Template.docx">MS Word</a> &  
+	<a href="admin/Lab_Submission_Template.pdf" target="_top">PDF</a> 		
+<LI> <A href="labs/3701 Parts List_27Apr19.pdf">
+	Parts List <B>(updated 14 May 2019)</B></a> 
+<LI> Parts for <a href="admin/Quiz_parts.html">Lab Quizzes</a>
+<LI> We are now using a <B>Max 10 FPGA Device, 
+	<a href="https://www.altera.com/documentation/myt1396938463674.html#myt1396949701969">
+	10M02SCU169C8G</a></B>. <br>
+	&nbsp;&nbsp;&nbsp;&nbsp; - Select <i>Family</i>: 
+		<B>MAX 10 (DA/DF/DC/SA/SC)</B> <br> 
+	&nbsp;&nbsp;&nbsp;&nbsp; - Select <i>Device</i>: 
+		<B>10M02SCU169C8G</B> <br>
+<B><u>MAX 10 Documentation</u></B> <br>
+	&nbsp;&nbsp;&nbsp; 
+	- <a href="docs/Max10/m10_overview.pdf">Max 10 Overview</a>	<br>
+	&nbsp;&nbsp;&nbsp; 
+	- <a href="docs/Max10/m10_architecture.pdf">Max 10 Architecture</a> 	<br>
+	&nbsp;&nbsp;&nbsp; 
+	- <a href="docs/Max10/ug_ram_rom_Embedded_Memory.pdf">Max 10 User Embedded RAM/ROM (1-port/2-port) Memory</a>	<br>
+	&nbsp;&nbsp;&nbsp; 
+	- <a href="docs/Max10/ug_m10_ufm_User_Flash_Memory.pdf">Max 10 User Flash Memory</a> <br>
+	
+<hr>
+<font size="-1">
+<B><u>OLD MAX V Documentation</u></B> <br>
+	&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+	- We previously used a <B>Max V PLD, 
+	<a href="docs/OOTB_MaxV/MaxV_PartNum_Meaning.html">
+	5M570ZT100C5N</a></B>. <br>
+	&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+	- In Quartus, select Family: MAX V and Device: 5M570ZT100C5 <br>
+	&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+	- <a href="docs/max5_handbook.pdf">Max V CPLD documentation</a> (handbook - May 2011)	
+</font> 
+</TD> </TR>
+
+ <TR>
+  <TH ALIGN=CENTER VALIGN=CENTER> </TH>
+  <TH ALIGN=CENTER VALIGN=CENTER> </TH>
+  <TD ALIGN=LEFT VALIGN=CENTER>
+
+<!--
+<LI> CPLD PCB test POF file <a href="docs/quartus/Test_CPLD_PCB/portTester.pof.txt">
+	portTester.pof.txt</a> <br>
+	&nbsp;&nbsp;&nbsp; 
+	- After downloading, <B>remove .txt</B> from file name.
+-->
+<LI> Instruction on using the 
+	<a href="docs/OOTB_Max10/CPLD Programmer/Out of the Box CPLD Programmer.pdf">
+	Out of the Box CPLD Programmer</a> <B>(OLD)</B>
+<LI> <a href=
+	"docs/OOTB_Max10/General Docs/MXDB/MXDB Manual.pdf">
+	OOTB MAX 10 Development Board Manual (19July19)</a> 
+<LI> <a href=
+	"docs/OOTB_Max10/Schematics/MXDB/MXDB SCH.PDF">
+	OOTB MAX 10 Schematic (29Apr19)</a> 
+
+<!--
+	<LI><a href="docs/OOTB_Max10/"> OOTB 3701 Max 10 files</a>
+	(Updated 13May19)	
+-->
+</TD> </TR>
+
+<TR>
+<TH ALIGN=CENTER VALIGN=CENTER>0 </TH>
+   <TD VALIGN="MIDDLE"><P ALIGN="CENTER"> 
+	Mon, 26 Aug <br>
+<!--
+	Mon, 14 Jan <br>
+	Mon, 20 May <br>
+	Mon, 26 Aug <br>
+-->
+	<A HREF="https://ufl.instructure.com/" target="_top">
+		Canvas link</a> 
+	</TD>
+
+<TD ALIGN=LEFT VALIGN=CENTER> <a name="zero"> </a>
+
+<A href="labs/lab0_f19_intro_and_construction.pdf"> 
+	Lab 0 Document <B>(R1)</B></A> 
+
+<LI> <A href="docs/chapter3_MIT_6270_Manual.pdf"><i>Electronic Assembly handout</i></A> 
+	Chapter 3 of the MIT 6270 Manual
+
+<LI> <a href="docs/quartus/quartus18.1_installation.pdf">
+	Quartus 18.1 Installation Instructions <B>(R0)</B></a> 
+
+<LI> <a href="docs/OOTB_Max10/General Docs/MXDB/MXDB Assembly Guide.pdf">
+	OOTB 3701 Assembly Guide <B>(14May19)</B></a> 
+<LI> <a href=
+	"docs/OOTB_Max10/General Docs/MXDB/MXDB Manual.pdf">
+	OOTB MAX 10 Development Board Manual (14June19)</a> 
+<LI> <a href=
+	"docs/OOTB_Max10/Schematics/MXDB/MXDB SCH.PDF">
+	OOTB MAX 10 Schematic (29Apr19)</a> 
+
+<LI> <A href="docs/hardware_get_started.pdf"> 
+	Hardware: Getting Started <B>(R0)</B></A> 
+</TD> </TR>
+
+<TR>
+<TH ALIGN=CENTER VALIGN=CENTER>1 </TH>
+   <TD VALIGN="MIDDLE"><P ALIGN="CENTER"> 
+	<del>Thur, 5 Sept </del><br>
+	<font color="red">Mon, 9 Sept </font> <br>
+<!--
+	Thur, 24 Jan <br>
+	Wed, 29 May <br>
+	Thur, 5 Sept <br>	
+-->
+	<A HREF="https://ufl.instructure.com/" target="_top">
+		Canvas link</a> 
+	</TD>
+
+<TD ALIGN=LEFT VALIGN=CENTER> <a name="one"> </a>
+<A href="labs/lab1_f19_logic_design.pdf"> Lab 1 Document
+	<B>(R0)</B> </A>
+
+<LI> <a href="docs/quartus/quartus_18.1_tutorial.pdf">
+	Quartus Tutorial (R0)</a> 
+	(for <B>Prime Lite Edition 18.1</B>)
+<hr>
+<LI> <a href="docs/quartus/Quartus_Display_Issues.pdf">
+	Quartus Display Issues</a> (for high resolution monitors)
+<LI> Instruction on using the 
+	<a href="docs/OOTB_CPLD_Programmer/Out of the Box CPLD Programmer.pdf">
+	Out of the Box CPLD Programmer</a> 
+<LI> <a href="http://www.ftdichip.com/Drivers/CDM/CDM21228_Setup.zip">
+	FTDI Driver</a> for OOTB CPLD Programmer to use FTDI USB over JTAG <br>
+	&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+	<B> Download, unzip, and execute to install </B>
+<LI> <a href="http://www.ftdichip.com/Drivers/D2XX.htm">
+	FTDI Driver web page</a> for <B>non-Windows</B> operating systems
+	
+<LI> OOTB CPLD Programmer DLL (see instructions for placement) for <br>
+	&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+	<a href="docs/OOTB_CPLD_Programmer/CPLD Programmer/v18b/jtag_hw_mbftdi_blaster64.dll">64-bit Windows<a>, 
+	<a href="docs/OOTB_CPLD_Programmer/CPLD Programmer/v15b/x86/jtag_hw_mbftdi_blasterXX.dll">32-bit Windows</a>, or
+	<a href="docs/OOTB_CPLD_Programmer/CPLD Programmer/Linux/libjtag_hw_mbftdi-blaster/libjtag_hw_mbftdi-blaster.so.txt">Linux 
+		<font size="-1">(remove .txt from file name before use) </font> </a>
+<LI> <a href="https://marsohod.org/prodmbftdi/mbftdiq2drv" target="_top">
+	Website for OOT CPLD Programmer DLL</a> <br>
+	&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+	(use Google Chrome to automatically translate website to English)
+<hr>
+		
+<LI> <A href="docs/hardware_get_started.pdf"> 
+	Hardware: Getting Started <B>(R0)</B></A> 
+<LI> <A href="docs/pinouts.txt">
+	Pinouts of common parts</A> (txt)
+ <LI> <A HREF=docs/pinouts.pdf>
+	Pinouts of common parts</A> (pdf)
+<LI> <a href="pinouts/" target="_top"> 
+	Famous pinouts web-site</a>
+<font size="-1">
+	<LI> <A href="labs/protoboard_for_layouts.ppt"> 
+		Protoboard layout for PowerPoint</A>
+	<LI> <A href="labs/protoboard_for_layouts.pdf"> 
+		Protoboard layout for Acrobat (.pdf)</A>
+	<LI> <A href="labs/Switch_Bank.jpg"> 
+		Switch Bank Figure</a> (for inclusion in your logic 
+		circuit diagrams)
+	<LI> <a href="labs/quartus_mixed-logic.html"> 
+		Correspondence</a>
+		with a student about Quartus and active-low signals
+</font>
+</TD> </TR>
+
+<TR>
+  <TH ALIGN=CENTER VALIGN=CENTER>2 </TH>
+     <TD VALIGN="MIDDLE"><P ALIGN="CENTER"> 
+	Mon, 16 Sept <br>
+<!--
+	Fri, 8 Feb <br>
+	Thur, 6 June <br>
+	Mon, 16 Sept <br>
+-->
+	<A HREF="https://ufl.instructure.com/" target="_top">
+		Canvas link</a> 
+	</TD>
+  <TD ALIGN=LEFT VALIGN=CENTER> <a name="two"> </a>
+<A href="labs/lab2_f19_MSI.pdf"> 
+		Lab 2 Document <B>(R1)</B> </A> 
+<LI> <A href="labs/hex_to_7seg.bdf"">hex_to_7seg.bdf</a>
+<LI> Documentation on <A href="docs/OOTB_Max10/OOTB_7-seg.pdf">
+	7-Segment Displays on MAX 10 PCB (<B>R2</B>)</A>
+<LI> <A href="docs/OOTB_Max10/sevenSegmentDatasheet.pdf">
+	7-segment LED data sheet</A>
+<li> <a href="docs/74HC153_national.pdf" target="_top">
+	Specifications</A> 
+	for the 74HC153 Dual 4-input Multiplexer.
+<li> <a href="docs/74HC153_philips.pdf" target="_top"> 
+	Another spec sheet</A> 
+	for the 74HC153 Dual 4-input Multiplexer.
+<LI> <a href="docs/quartus/wire_bus.pdf">
+	Using "Wires" and Busses in Quartus Block Diagram/Schematic 
+		(bdf) Files <B>(R0)</B></a> <br>
+	&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 
+		-<a href="docs/quartus/wire_bus.qar">
+		Quartus archive for Wire/Bus Tutorial </a>
+</TD> </TR>
+
+<!--
+<TR>
+  <TH ALIGN=CENTER VALIGN=CENTER>3 </TH>
+     <TD VALIGN="MIDDLE"><P ALIGN="CENTER">
+		Mon, 3 Oct <br>
+		Mon, 18 Feb <br>
+		Thur, 13 June <br>
+	<A HREF="https://ufl.instructure.com/" target="_top">
+		Canvas link</a> 
+	</TD>
+  <TD ALIGN=LEFT VALIGN=CENTER> <a name="three"> </a>
+  	<A href="labs/lab3_f19_Debouncing_Counter.pdf"> 
+		Lab 3 Document <B>(R2)</B> </A>
+</TD> </TR>
+
+<TR>
+  <TH ALIGN=CENTER VALIGN=CENTER>4 </TH>
+     <TD VALIGN="MIDDLE"><P ALIGN="CENTER"> 
+		Mon, 17 Oct <br>
+		Wed, 13 Mar <br>
+		Tues, 9 July <br>
+	<A HREF="https://ufl.instructure.com/" target="_top">
+		Canvas link</a> 
+	</TD>
+<TD ALIGN=LEFT VALIGN=CENTER> <a name="four"> </a>
+	<A href="labs/lab4_f19_ALU_CPU.pdf"> 
+		Lab 4 Document <B>(R0)</B> </A>
+
+  <li> <a href="docs/74HC283_national.pdf" target="_top"> Specifications</A> 
+	for the 74HC283 4-Bit Binary Adder with Fast Carry.  (117KB) 
+  <li> <a href="docs/74HC283_philips.pdf" target="_top"> Another spec sheet</A> 
+	for the 74HC283 4-Bit Binary Adder with Fast Carry.  (60KB)
+<LI> Suggestions for 
+	<A href="docs/PLD_PCB_Debug.pdf">
+	Debugging your PLD PCB <B>(R0)</B> </A>
+  <li> Be careful with your PLD board.  If you destroy the chip, 
+	replacing it is <B>NOT</B> something that you can do 
+	yourself.
+</TD> </TR>
+
+<TR>
+  <TH ALIGN=CENTER VALIGN=CENTER>5 </TH>
+     <TD VALIGN="MIDDLE"><P ALIGN="CENTER"> 
+		Mon, 24 Oct <br>
+		Mon, 25 Mar <br>
+		Tues, 16 July <br>
+	<A HREF="https://ufl.instructure.com/" target="_top">
+		Canvas link</a> 
+	</TD>
+  <TD ALIGN=LEFT VALIGN=CENTER> <a name="five"> </a>
+	<A href="labs/lab5_f19_traffic_controller.pdf"> 
+		Lab 5 Document <B>(R1)</B> </A>
+<LI> <a href="docs/quartus/Component_Creation.pdf"> 
+	<i>Creating Graphical Components</i> (R0)</a>
+	 in Quartus from BDF or VHDL files
+    <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	- This is very useful for implementing long equations in a graphical design
+	<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	- <a href="docs/quartus/CompCreation.qar">Archive file for this document</a>
+ </TD> </TR>
+
+<TR>
+  <TH ALIGN=CENTER VALIGN=CENTER>6 </TH>
+     <TD VALIGN="MIDDLE"><P ALIGN="CENTER"> 
+		Tues, 15 Nov <br>
+		Thur, 4 Apr <br>		
+		Tues, 23 July <br>
+	<font color="red">
+		Can <B><u>NOT</u></B> Drop <br>
+	</font>
+	<A HREF="https://ufl.instructure.com/" target="_top">
+		Canvas link</a> 
+	</TD>
+  <TD ALIGN=LEFT VALIGN=CENTER> <a name="six"> </a>
+<A href="labs/lab6_f19_cpu_design.pdf"> Lab 6 Document 
+	<B>(R2)</B> </A> 
+
+<LI> MIF example file: <A href="labs/rom_8k.mif"> rom_8k.mif</a> 
+<LI> <a href="docs/quartus/rom_creation.pdf">
+	ROM Creation Tutorial for Quartus Prime Lite Edition 18.1
+	<B>(R0)</B></a> <br>
+	&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 
+		-<a href="docs/quartus/rom_1kx8.qar">
+		Quartus archive for ROM Creation Tutorial </a> 
+	<br>
+<LI> <a href="docs/quartus/mif_creation.pdf">
+	Quartus Memory Initialization File (MIF) (R0)</a> <br>
+
+<LI> <a href="docs/quartus/bus.pdf">
+	Using Busses and "Wires" in Quartus Schematic Entry (bdf) Files <B>(R0)</B></a> <br>
+	&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp; 
+		-<a href="docs/quartus/Bus.qar">
+		Quartus archive for "Using Busses ..." Tutorial </a> <br>
+
+<li> <a href="docs/74HC161-163_motorola.pdf" target="_top"> Specifications</A> 
+	for the 74HC161 and 74HC163 4-bit Counters. (338k) Motorola
+<li>  <a href="docs/74HC161_philips.pdf" target="_top"> Specifications</A> 
+	for the 74HC161 4-Bit Counter.  (82KB) Philips
+	
+<hr>
+<LI> <u><B>VHDL ROM alternative:</B></u> <br>
+	&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp; 
+		- <a href="docs/quartus/VHDL_ROM/VHDL_ROM.pdf"> 
+		Instructions for using the VHDL ROM alternative</a><br>
+	&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp; 
+		- Quartus archive file, <a href="docs/quartus/VHDL_ROM/Board_ROM.qar"> 
+		Board_ROM.qar</a><br>
+	&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp; 
+		- Excel spreadsheet, <a href="docs/quartus/VHDL_ROM/ROM_contents.xlsx"> 
+		ROM_contents.xlsx</a><br>
+
+<font size="-5">
+<hr> <strike>
+<LI> OOTB documentation: 
+	<a href="docs/OOTB_MaxV/How to Use the Out of the Box Flash Interface.pdf"> 
+	How to Use the Out of the Box Flash Interface</a>
+<LI> OOTB documentation and files for programming the Flash memory on your PLD PCB: <a href="docs/OOTB_MaxV/flashInterface.zip"> flashInterface.zip</a>
+<LI> OOTB documentation: 
+	<a href="docs/OOTB_MaxV/Flash Programmer Guide.pdf"> 
+	Flash Programmer Guide.pdf</a>
+<LI> OOTB documentation: 
+	<a href="docs/OOTB_MaxV/flashInterface Guide.pdf"> 	flashInterface Guide.pdf</a>
+
+<LI> Flash Programmer pof file: 
+	<a href="docs/OOTB_MaxV/flashProgrammerForGUI.pof.txt">flashProgrammerForGUI.pof.txt</a> <br>
+		&nbsp;&nbsp;&nbsp; 
+	- After downloading, <B>remove .txt</B> from file name.
+<LI> <a href="docs/OOTB_Max10/Flash/MXDB/FlashProgrammer-installer.exe"> 
+	FlashProgrammer-installer.exe</a> for MAX10 PCB
+</strike>
+</font>
+	
+</TD> </TR>
+
+<TR>
+  <TH ALIGN=CENTER VALIGN=CENTER>7 </TH>
+     <TD VALIGN="MIDDLE"><P ALIGN="CENTER"> 
+		Tues, 29 Nov <br>
+		Thur, 11 Apr <br>
+		Tues, 30 July <br>		
+	<A HREF="https://ufl.instructure.com/" target="_top">
+		Canvas link</a> 
+	</TD>
+  <TD ALIGN=LEFT VALIGN=CENTER> <a name="seven"> </a>
+
+<A href="labs/lab7_f19_gcpu.pdf"> 
+	Lab 7 Document <B>(R0)</B></A> <br>
+<LI> You will <B>NOT</B> need your toolbox for this lab. <br>
+<LI> <A href="labs/Assembly_List.docx"> 
+	Assembly List File (MS-Word)</A> <br>
+<LI> <A href="labs/Assembly_List.xlsx"> 
+	Assembly List File (Excel)</A> <br>
+<LI> <a href="docs/quartus/rom_creation.pdf">
+	ROM Creation Tutorial for Quartus Prime Lite Edition 18.1
+	<B>(R0)</B></a>
+	<br>
+
+  <LI> <A href="labs/gcpu/G-CPU_Complete_Documentation_22Apr19.pdf"> Documentation and Design Files
+	<B>(R0)</B> </A>  (in one pdf) [no mif]
+
+  <LI> <A href="labs/gcpu/gcpu_docs/"> Documentation and Simulation files <B> (R0)</B></A> (folder) 
+  <LI> <A href="labs/gcpu/gcpu-s19.qar"> Archived G-CPU Quartus files <B>(R0)</B></A> (Spring 2019, for Quartus 18.1 with Cylone V installed)
+
+</TD> </TR>
+-->
+
+<!--
+<TR>
+  <TH ALIGN=CENTER VALIGN=CENTER>8 </TH>
+     <TD VALIGN="MIDDLE"><P ALIGN="CENTER"> 
+		Tues, 17 Nov <br>
+		Tues, 19 July <br>
+	<A HREF="https://ufl.instructure.com/" target="_top">
+		Canvas link</a> 
+	</TD>
+  <TD ALIGN=LEFT VALIGN=CENTER> <a name="eight"> </a>
+  <LI> <A href="labs/lab8_f19_cpu_design.pdf"> Lab 8 Document <B>(R4)</B></A>
+
+<LI> MIF example file: <A href="labs/rom_8k.mif"> rom_8k.mif</a> 
+<LI> MIF example file: <A href="labs/rom_8k.mif.txt"> 
+	rom_8k.mif.txt</a> (RENAME WITHOUT .txt after downloading)
+<LI> <a href="docs/quartus/rom_creation.pdf">
+	ROM Creation Tutorial for Quartus <B>(R1)</B></a> (18July14) <br>
+	&nbsp;&nbsp;&nbsp; 
+		-<a href="docs/quartus/rom_1kx8.qar">
+		Quartus archive for ROM Creation Tutorial </a> <br>
+<LI> <a href="docs/quartus/bus.pdf">
+	Using Busses and "Wires" in Quartus Schematic Entry (bdf) Files <B>(R0)</B></a> <br>
+	&nbsp;&nbsp;&nbsp; 
+		-<a href="docs/quartus/wire_bus.qar">
+		Quartus archive for Wire Bus Tutorial </a> <br>
+
+<LI> <a href="DAD/Waveforms_2015_tutorial.pdf">Waveforms 2015 Tutorial</a> <B>(R1)</B> (with ROM emulation instructions)	
+
+<li> <a href="docs/74HC161-163_motorola.pdf" target="_top"> Specifications</A> 
+	for the 74HC161 and 74HC163 4-bit Counters.  [Motorola]
+<li>  <a href="docs/74HC161_philips.pdf" target="_top"> Specifications</A> 
+	for the 74HC161 4-Bit Counter.  [Philips]
+<lI>	<a href="docs/74f193_national.pdf" target="_top">Other 163 specs</a> 
+	[National]
+<li><a href="docs/28C256_EEPROM.pdf"> Specifications</A> for the 28256 
+	(32kx8) EEPROM. [Atmel] 
+</TD> </TR>
+
+<TR>
+  <TH ALIGN=CENTER VALIGN=CENTER> 9</TH>
+     <TD VALIGN="MIDDLE"><P ALIGN="CENTER"> 
+		Tues, 1 Dec <br>
+		Tues, 26 July <br>
+	<A HREF="https://ufl.instructure.com/" target="_top">
+		Canvas link</a> 
+	</TD>
+  <TD ALIGN=LEFT VALIGN=CENTER> <a name="nine"> </a>
+	You will <B>NOT</B> need your toolbox for this lab. <br>
+
+  <LI> <A href="labs/lab9_f19_gcpu.pdf"> 
+	Lab 9 Document <B>(R1)</B></A> <br>
+  <LI> <A href="labs/Assembly_List.docx"> 
+	Assembly List File (MS-Word)</A> <br>
+  <LI> <A href="labs/Assembly_List.xlsx"> 
+	Assembly List File (Excel)</A> <br>
+
+  <LI> <A href="labs/gcpu/gcpu_files.pdf"> Documentation and Design Files
+	<B>(R0)</B> </A>  (in one pdf) [no mif]
+  <LI> <A href="labs/gcpu/gcpu_files_bw.pdf"> Above Documentation and Design Files 
+	<B>(for non-color printers)</b>
+	<B>(Dec 2010)</B> </A>  
+  <LI> <A href="labs/gcpu/gcpu_documentation.zip"> Zipped G-CPU Documentation and Simulation files <B> (R0)</B></A>  
+  <LI> <A href="labs/gcpu/quartus_bdf_mif_pdfs/"> G-CPU bdf and mif files in pdf form <B> (R0)</B></A> (folder)
+  <LI> <A href="labs/gcpu/gcpu_docs/"> Documentation and Simulation files <B> (R0)</B></A> (folder) 
+  <LI> <A href="labs/gcpu/gcpu_f12.qar"> Archived G-CPU Quartus files <B>(R0)</B>	</A> (Fall 2012)
+</TD> </TR>
+-->
+
+</TABLE>
+</CENTER>
+
+ <h6>Last Updated by Dr. Eric M. Schwartz</h6>
+</BODY>
+ </HTML>

@@ -1,0 +1,7 @@
+|R_per6
+Y_L <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+B_L => inst.IN0
+C => inst.IN1
+A_L => inst2.IN1
+
+

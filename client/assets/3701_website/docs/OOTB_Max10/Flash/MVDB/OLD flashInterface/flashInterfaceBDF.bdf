@@ -1,0 +1,324 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 376 136 544 152)
+	(text "INPUT" (rect 125 0 166 11)(font "Arial" (font_size 6)))
+	(text "FL_CLK" (rect 5 0 55 14)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 152 18)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 376 152 544 168)
+	(text "INPUT" (rect 125 0 166 11)(font "Arial" (font_size 6)))
+	(text "FL_RST" (rect 5 0 55 14)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 152 18)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 568 136 744 152)
+	(text "OUTPUT" (rect 1 0 50 11)(font "Arial" (font_size 6)))
+	(text "FL_CEn" (rect 90 0 139 14)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 568 152 744 168)
+	(text "OUTPUT" (rect 1 0 50 11)(font "Arial" (font_size 6)))
+	(text "FL_OEn" (rect 90 0 139 14)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 568 168 744 184)
+	(text "OUTPUT" (rect 1 0 50 11)(font "Arial" (font_size 6)))
+	(text "FL_WEn" (rect 90 0 139 14)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 568 184 744 200)
+	(text "OUTPUT" (rect 1 0 50 11)(font "Arial" (font_size 6)))
+	(text "FL_ALE" (rect 90 0 139 14)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 368 208 604 224)
+	(text "OUTPUT" (rect 1 0 50 11)(font "Arial" (font_size 6)))
+	(text "FL_addrOut[10..0]" (rect 90 0 230 14)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(bidir)
+	(rect 368 192 544 208)
+	(text "BIDIR" (rect 1 0 42 11)(font "Arial" (font_size 6)))
+	(text "FL_IO[7..0]" (rect 90 0 180 14)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 56 4)(pt 78 4))
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 56 12)(pt 78 12))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 78 12)(pt 82 8))
+		(line (pt 56 4)(pt 52 8))
+		(line (pt 52 8)(pt 56 12))
+	)
+	(text "VCC" (rect 4 7 28 18)(font "Arial" (font_size 6)))
+)
+(symbol
+	(rect 488 240 696 416)
+	(text "flashInterface" (rect 5 0 120 14)(font "Arial" ))
+	(text "inst" (rect 8 160 41 174)(font "Arial" ))
+	(port
+		(pt 0 88)
+		(input)
+		(text "A[14..0]" (rect 0 0 66 14)(font "Arial" ))
+		(text "A[14..0]" (rect 24 80 127 103)(font "Arial Narrow" (font_size 12)))
+		(line (pt 0 88)(pt 16 88)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "WEn" (rect 0 0 24 14)(font "Arial" ))
+		(text "WEn" (rect 24 56 62 79)(font "Arial Narrow" (font_size 12)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "OEn" (rect 0 0 24 14)(font "Arial" ))
+		(text "OEn" (rect 24 40 62 63)(font "Arial Narrow" (font_size 12)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "CEn" (rect 0 0 24 14)(font "Arial" ))
+		(text "CEn" (rect 24 24 62 47)(font "Arial Narrow" (font_size 12)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 208 24)
+		(input)
+		(text "CLK" (rect 0 0 24 14)(font "Arial" ))
+		(text "CLK" (rect 160 16 198 39)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 192 24)(pt 208 24))
+	)
+	(port
+		(pt 208 40)
+		(input)
+		(text "RST" (rect 0 0 24 14)(font "Arial" ))
+		(text "RST" (rect 158 32 196 55)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 192 40)(pt 208 40))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "IO[7..0]" (rect 0 0 66 14)(font "Arial" ))
+		(text "IO[7..0]" (rect 24 104 127 127)(font "Arial Narrow" (font_size 12)))
+		(line (pt 16 112)(pt 0 112)(line_width 3))
+	)
+	(port
+		(pt 208 56)
+		(output)
+		(text "FL_CEn" (rect 0 0 49 14)(font "Arial" ))
+		(text "FL_CEn" (rect 143 48 220 71)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 56)(pt 192 56))
+	)
+	(port
+		(pt 208 72)
+		(output)
+		(text "FL_OEn" (rect 0 0 49 14)(font "Arial" ))
+		(text "FL_OEn" (rect 143 64 220 87)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 72)(pt 192 72))
+	)
+	(port
+		(pt 208 88)
+		(output)
+		(text "FL_WEn" (rect 0 0 49 14)(font "Arial" ))
+		(text "FL_WEn" (rect 136 80 213 103)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 88)(pt 192 88))
+	)
+	(port
+		(pt 208 136)
+		(output)
+		(text "FL_AddrOut[10..0]" (rect 0 0 140 14)(font "Arial" ))
+		(text "FL_AddrOut[10..0]" (rect 79 128 299 151)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 136)(pt 192 136)(line_width 3))
+	)
+	(port
+		(pt 208 104)
+		(output)
+		(text "FL_ALE" (rect 0 0 49 14)(font "Arial" ))
+		(text "FL_ALE" (rect 143 96 220 119)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 104)(pt 192 104))
+	)
+	(port
+		(pt 208 120)
+		(bidir)
+		(text "FL_IO[7..0]" (rect 0 0 90 14)(font "Arial" ))
+		(text "FL_IO[7..0]" (rect 119 112 261 135)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 120)(pt 192 120)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 160))
+	)
+)
+(connector
+	(text "FL_CEn" (rect 705 280 754 294)(font "Arial" )(invisible))
+	(pt 704 296)
+	(pt 696 296)
+)
+(connector
+	(text "FL_OEn" (rect 705 296 754 310)(font "Arial" )(invisible))
+	(pt 704 312)
+	(pt 696 312)
+)
+(connector
+	(text "FL_WEn" (rect 705 312 754 326)(font "Arial" )(invisible))
+	(pt 704 328)
+	(pt 696 328)
+)
+(connector
+	(text "FL_ALE" (rect 705 328 754 342)(font "Arial" )(invisible))
+	(pt 704 344)
+	(pt 696 344)
+)
+(connector
+	(text "FL_IO[7..0]" (rect 705 344 795 358)(font "Arial" )(invisible))
+	(pt 704 360)
+	(pt 696 360)
+	(bus)
+)
+(connector
+	(text "FL_addrOut[10..0]" (rect 700 360 840 374)(font "Arial" )(invisible))
+	(pt 704 376)
+	(pt 696 376)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS4500>>" (rect 423 336 588 350)(font "Arial" )(invisible))
+	(pt 400 352)
+	(pt 488 352)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS4502>>" (rect 427 312 592 326)(font "Arial" )(invisible))
+	(pt 400 328)
+	(pt 488 328)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS4504>>" (rect 427 288 592 302)(font "Arial" )(invisible))
+	(pt 400 304)
+	(pt 488 304)
+)
+(connector
+	(text "<<__$DEF_ALIAS4506>>" (rect 434 272 599 286)(font "Arial" )(invisible))
+	(pt 400 288)
+	(pt 488 288)
+)
+(connector
+	(text "<<__$DEF_ALIAS4508>>" (rect 426 256 591 270)(font "Arial" )(invisible))
+	(pt 400 272)
+	(pt 488 272)
+)
+(connector
+	(text "FL_CLK" (rect 705 248 754 262)(font "Arial" )(invisible))
+	(pt 704 264)
+	(pt 696 264)
+)
+(connector
+	(text "FL_RST" (rect 705 264 754 278)(font "Arial" )(invisible))
+	(pt 704 280)
+	(pt 696 280)
+)
+(text "flashInterface BDF Sample" (rect 352 64 883 92)(font "Arial" (font_size 16)(bold)))
+(text "Genral Inputs" (rect 368 120 521 136)(font "Arial" (font_size 8)(bold)))
+(text "Flash Control" (rect 568 120 721 136)(font "Arial" (font_size 8)(bold)))
+(text "Busses" (rect 368 176 438 192)(font "Arial" (font_size 8)(bold)))
+(rectangle (rect 344 96 768 440))

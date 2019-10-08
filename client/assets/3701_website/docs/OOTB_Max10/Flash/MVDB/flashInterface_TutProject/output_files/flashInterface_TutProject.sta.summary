@@ -1,0 +1,49 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'flashInterface:inst2|div_clk'
+Slack : -42.498
+TNS   : -4630.941
+
+Type  : Setup 'CLK'
+Slack : -6.139
+TNS   : -22.714
+
+Type  : Setup 'FI_CLK'
+Slack : -5.954
+TNS   : -12.211
+
+Type  : Hold 'FI_CLK'
+Slack : 0.013
+TNS   : 0.000
+
+Type  : Hold 'flashInterface:inst2|div_clk'
+Slack : 2.440
+TNS   : 0.000
+
+Type  : Hold 'CLK'
+Slack : 3.382
+TNS   : 0.000
+
+Type  : Recovery 'flashInterface:inst2|div_clk'
+Slack : -7.821
+TNS   : -7.821
+
+Type  : Removal 'flashInterface:inst2|div_clk'
+Slack : 6.503
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'FI_CLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'flashInterface:inst2|div_clk'
+Slack : 0.161
+TNS   : 0.000
+
+------------------------------------------------------------

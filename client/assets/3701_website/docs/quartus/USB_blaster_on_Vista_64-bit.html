@@ -1,0 +1,26 @@
+<ul>
+<center> <font size="+2">
+	USB Blaster on 64-bit Vista for Altera's Quartus
+</font></center>
+<br>
+
+<LI> If you can not program your boards using the USB 
+	Blaster, then you will need to configure Vista 
+	64-bit to accept unsigned drivers as follows:
+<ul>
+<LI> Select "Start | Programs | Acessories | " then 
+	Right mouse on "Command Prompt" and select 
+	"Run as administrator"
+<LI> Select "Continue"
+<LI> Type: 
+	<B>bcdedit /set testsigning on</B>
+<LI> Type: 
+	<B>bcdedit /set loadoptions DDISABLE_INTEGRITY_CHECKS</B>
+<LI> Reboot your computer.
+</ul>
+
+<LI> Unfortunately, the four corners of your computer will 
+	now display <B>Test Mode</B> and the Windows version 	
+	will appear in the top center of your display, e.g., 
+	<B>Microsoft (R) Windows (R) (Build 6002: Service Pack 2)</B>.
+</ul>

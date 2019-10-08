@@ -1,0 +1,29 @@
+set_location_assignment PIN_21 -to FL_addrOut[10]
+set_location_assignment PIN_19 -to FL_addrOut[9]
+set_location_assignment PIN_28 -to FL_addrOut[8]
+set_location_assignment PIN_27 -to FL_addrOut[7]
+set_location_assignment PIN_18 -to FL_addrOut[6]
+set_location_assignment PIN_17 -to FL_addrOut[5]
+set_location_assignment PIN_26 -to FL_addrOut[4]
+set_location_assignment PIN_14 -to FL_addrOut[3]
+set_location_assignment PIN_99 -to FL_addrOut[2]
+set_location_assignment PIN_15 -to FL_addrOut[1]
+set_location_assignment PIN_16 -to FL_addrOut[0]
+set_location_assignment PIN_97 -to FL_ALE
+set_location_assignment PIN_98 -to FL_CEn
+set_location_assignment PIN_2 -to FL_IO[7]
+set_location_assignment PIN_4 -to FL_IO[6]
+set_location_assignment PIN_6 -to FL_IO[5]
+set_location_assignment PIN_1 -to FL_IO[4]
+set_location_assignment PIN_3 -to FL_IO[3]
+set_location_assignment PIN_5 -to FL_IO[2]
+set_location_assignment PIN_7 -to FL_IO[1]
+set_location_assignment PIN_12 -to FL_IO[0]
+set_location_assignment PIN_100 -to FL_OEn
+set_location_assignment PIN_20 -to FL_WEn
+set_location_assignment PIN_64 -to FL_CLK
+set_location_assignment PIN_67 -to FL_RST
+set_global_assignment -name FAMILY "MAX V"
+set_global_assignment -name DEVICE 5M570ZT100C5
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+

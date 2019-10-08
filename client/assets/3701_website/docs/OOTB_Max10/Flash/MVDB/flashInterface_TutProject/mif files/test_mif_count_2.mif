@@ -1,0 +1,27 @@
+DEPTH = 32768;
+WIDTH = 8;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+[000..4a4f]	:	55;
+4a50			:	0;
+4a51			:	1;
+4a52			:	2;
+4a53			:	3;
+4a54			:	4;
+4a55			:	5;
+4a56			:	6;
+4a57			:	7;
+4a58			:	8;
+4a59			:	9;
+4a5a			:	A;
+4a5b			:	B;
+4a5c			:	C;
+4a5d			:	D;
+4a5e			:	E;
+4a5f			:	F;
+[4a60..7fff]	:	AA;
+END;
+		
+

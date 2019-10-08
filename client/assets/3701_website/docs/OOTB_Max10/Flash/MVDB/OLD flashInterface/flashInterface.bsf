@@ -1,0 +1,121 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 272 240)
+	(text "flashInterface" (rect 5 0 120 14)(font "Arial" ))
+	(text "inst" (rect 8 160 41 174)(font "Arial" ))
+	(port
+		(pt 0 88)
+		(input)
+		(text "A[14..0]" (rect 0 0 66 14)(font "Arial" ))
+		(text "A[14..0]" (rect 24 80 127 103)(font "Arial Narrow" (font_size 12)))
+		(line (pt 0 88)(pt 16 88)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "WEn" (rect 0 0 24 14)(font "Arial" ))
+		(text "WEn" (rect 24 56 62 79)(font "Arial Narrow" (font_size 12)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "OEn" (rect 0 0 24 14)(font "Arial" ))
+		(text "OEn" (rect 24 40 62 63)(font "Arial Narrow" (font_size 12)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "CEn" (rect 0 0 24 14)(font "Arial" ))
+		(text "CEn" (rect 24 24 62 47)(font "Arial Narrow" (font_size 12)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 208 24)
+		(input)
+		(text "CLK" (rect 0 0 24 14)(font "Arial" ))
+		(text "CLK" (rect 160 16 198 39)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 192 24)(pt 208 24))
+	)
+	(port
+		(pt 208 40)
+		(input)
+		(text "RST" (rect 0 0 24 14)(font "Arial" ))
+		(text "RST" (rect 158 32 196 55)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 192 40)(pt 208 40))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "IO[7..0]" (rect 0 0 66 14)(font "Arial" ))
+		(text "IO[7..0]" (rect 24 104 127 127)(font "Arial Narrow" (font_size 12)))
+		(line (pt 16 112)(pt 0 112)(line_width 3))
+	)
+	(port
+		(pt 208 56)
+		(output)
+		(text "FL_CEn" (rect 0 0 49 14)(font "Arial" ))
+		(text "FL_CEn" (rect 143 48 220 71)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 56)(pt 192 56))
+	)
+	(port
+		(pt 208 72)
+		(output)
+		(text "FL_OEn" (rect 0 0 49 14)(font "Arial" ))
+		(text "FL_OEn" (rect 143 64 220 87)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 72)(pt 192 72))
+	)
+	(port
+		(pt 208 88)
+		(output)
+		(text "FL_WEn" (rect 0 0 49 14)(font "Arial" ))
+		(text "FL_WEn" (rect 136 80 213 103)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 88)(pt 192 88))
+	)
+	(port
+		(pt 208 136)
+		(output)
+		(text "FL_AddrOut[10..0]" (rect 0 0 140 14)(font "Arial" ))
+		(text "FL_AddrOut[10..0]" (rect 79 128 299 151)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 136)(pt 192 136)(line_width 3))
+	)
+	(port
+		(pt 208 104)
+		(output)
+		(text "FL_ALE" (rect 0 0 49 14)(font "Arial" ))
+		(text "FL_ALE" (rect 143 96 220 119)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 104)(pt 192 104))
+	)
+	(port
+		(pt 208 120)
+		(bidir)
+		(text "FL_IO[7..0]" (rect 0 0 90 14)(font "Arial" ))
+		(text "FL_IO[7..0]" (rect 119 112 261 135)(font "Arial Narrow" (font_size 12))(invisible))
+		(line (pt 208 120)(pt 192 120)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 160))
+	)
+)

@@ -1,0 +1,49 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+29
+1784
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+alu|
+controller|
+cpu|
+ir|
+pc_mar_ix|
+xdr_ydr|
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+f15_per4
+# storage
+db|f15_per4.(0).cnf
+db|f15_per4.(0).cnf
+# case_insensitive
+# source_file
+f15_per4.bdf
+e432facee7e679738f9a27e1d77a54f
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

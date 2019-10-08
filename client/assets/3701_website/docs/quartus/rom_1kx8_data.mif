@@ -1,0 +1,18 @@
+DEPTH = 1024;	% Memory depth and width are required %
+WIDTH = 8;		% Enter decimal numbers for each %
+ADDRESS_RADIX = HEX;	% Address and value radixes are optional %
+DATA_RADIX = HEX;		% Enter BIN, DEC, HEX, or OCT; unless %
+						% otherwise specified, radixes = HEX %
+-- Specify values for addresses, which can be single address or range
+CONTENT
+BEGIN
+[0..F]	: 0; % First 16 values are zero %
+10		: 33; % Single address data %
+11		: 5C; % Addr[11] = 5C %
+12		: 99;
+		: A1; % Addr[13] = A1 %
+14		: B2;
+15		: C3;
+16		: D4; % Addr[16] = D4 %
+[17..3FF] : FF; % remaining locations are FF %
+END ; % You must have END statement! %

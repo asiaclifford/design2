@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /**
  * Summary:
  *
@@ -6970,11 +6970,8 @@ Media Query
 .simple-card .nav.nav-tabs .nav-item .nav-link {
     padding: 17px 29px;}
 }
-.scroll
-{
-max-height: 800px;
-    overflow-y: auto;
-}
+
+
 
 
 /* Custom, iPhone Retina */

@@ -1,0 +1,57 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+29
+1784
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+||mil.ufl.edu|ems|eel|3701|gcpu|gcpu-f06|xdr_ydr|
+||mil.ufl.edu|ems|eel|3701|gcpu|gcpu-f06|pc_mar_ix|
+||mil.ufl.edu|ems|eel|3701|gcpu|gcpu-f06|ir|
+||mil.ufl.edu|ems|eel|3701|gcpu|gcpu-f06|db|
+||mil.ufl.edu|ems|eel|3701|gcpu|gcpu-f06|cpu|
+||mil.ufl.edu|ems|eel|3701|gcpu|gcpu-f06|controller|
+||mil.ufl.edu|ems|eel|3701|gcpu|gcpu-f06|alu|
+alu|
+controller|
+cpu|
+ir|
+pc_mar_ix|
+talkback|
+xdr_ydr|
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+ex0
+# storage
+db|ex0.(0).cnf
+db|ex0.(0).cnf
+# case_insensitive
+# source_file
+ex0.bdf
+68886850b370e42faf9018f6a8de576
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

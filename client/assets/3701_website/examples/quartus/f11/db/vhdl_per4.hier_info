@@ -1,0 +1,7 @@
+|vhdl_per4
+A => C.IN1
+B => C.IN0
+D => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+

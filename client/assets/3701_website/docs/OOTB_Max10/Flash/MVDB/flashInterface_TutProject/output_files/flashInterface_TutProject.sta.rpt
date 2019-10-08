@@ -1,0 +1,770 @@
+TimeQuest Timing Analyzer report for flashInterface_TutProject
+Fri Sep 01 05:29:14 2017
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'flashInterface:inst2|div_clk'
+ 12. Setup: 'CLK'
+ 13. Setup: 'FI_CLK'
+ 14. Hold: 'FI_CLK'
+ 15. Hold: 'flashInterface:inst2|div_clk'
+ 16. Hold: 'CLK'
+ 17. Recovery: 'flashInterface:inst2|div_clk'
+ 18. Removal: 'flashInterface:inst2|div_clk'
+ 19. Setup Transfers
+ 20. Hold Transfers
+ 21. Recovery Transfers
+ 22. Removal Transfers
+ 23. Report TCCS
+ 24. Report RSKM
+ 25. Unconstrained Paths Summary
+ 26. Clock Status Summary
+ 27. Unconstrained Input Ports
+ 28. Unconstrained Output Ports
+ 29. Unconstrained Input Ports
+ 30. Unconstrained Output Ports
+ 31. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; flashInterface_TutProject                           ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M570ZT100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.3%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                     ;
++------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------+
+; Clock Name                   ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                          ;
++------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------+
+; CLK                          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK }                          ;
+; FI_CLK                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { FI_CLK }                       ;
+; flashInterface:inst2|div_clk ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { flashInterface:inst2|div_clk } ;
++------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------+
+
+
++--------------------------------------------------------------------+
+; Fmax Summary                                                       ;
++------------+-----------------+------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                   ; Note ;
++------------+-----------------+------------------------------+------+
+; 22.99 MHz  ; 22.99 MHz       ; flashInterface:inst2|div_clk ;      ;
+; 140.08 MHz ; 140.08 MHz      ; CLK                          ;      ;
+; 143.8 MHz  ; 143.8 MHz       ; FI_CLK                       ;      ;
++------------+-----------------+------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------------------------+
+; Setup Summary                                          ;
++------------------------------+---------+---------------+
+; Clock                        ; Slack   ; End Point TNS ;
++------------------------------+---------+---------------+
+; flashInterface:inst2|div_clk ; -42.498 ; -4630.941     ;
+; CLK                          ; -6.139  ; -22.714       ;
+; FI_CLK                       ; -5.954  ; -12.211       ;
++------------------------------+---------+---------------+
+
+
++------------------------------------------------------+
+; Hold Summary                                         ;
++------------------------------+-------+---------------+
+; Clock                        ; Slack ; End Point TNS ;
++------------------------------+-------+---------------+
+; FI_CLK                       ; 0.013 ; 0.000         ;
+; flashInterface:inst2|div_clk ; 2.440 ; 0.000         ;
+; CLK                          ; 3.382 ; 0.000         ;
++------------------------------+-------+---------------+
+
+
++-------------------------------------------------------+
+; Recovery Summary                                      ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; flashInterface:inst2|div_clk ; -7.821 ; -7.821        ;
++------------------------------+--------+---------------+
+
+
++------------------------------------------------------+
+; Removal Summary                                      ;
++------------------------------+-------+---------------+
+; Clock                        ; Slack ; End Point TNS ;
++------------------------------+-------+---------------+
+; flashInterface:inst2|div_clk ; 6.503 ; 0.000         ;
++------------------------------+-------+---------------+
+
+
++-------------------------------------------------------+
+; Minimum Pulse Width Summary                           ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; CLK                          ; -2.289 ; -2.289        ;
+; FI_CLK                       ; -2.289 ; -2.289        ;
+; flashInterface:inst2|div_clk ; 0.161  ; 0.000         ;
++------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'flashInterface:inst2|div_clk'                                                                                                                                                                                                                                                                                                                                                          ;
++---------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; Slack   ; From Node                                                                                                                 ; To Node                                                                                                                                           ; Launch Clock                 ; Latch Clock                  ; Relationship ; Clock Skew ; Data Delay ;
++---------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; -42.498 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 43.177     ;
+; -42.130 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 42.809     ;
+; -42.130 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 42.809     ;
+; -42.130 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 42.809     ;
+; -42.040 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 42.719     ;
+; -41.672 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 42.351     ;
+; -41.672 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 42.351     ;
+; -41.672 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 42.351     ;
+; -41.179 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 41.858     ;
+; -40.907 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[2]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 41.586     ;
+; -40.811 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 41.490     ;
+; -40.811 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 41.490     ;
+; -40.811 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 41.490     ;
+; -40.558 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK2                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 41.237     ;
+; -40.449 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[2]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 41.128     ;
+; -40.443 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 41.122     ;
+; -40.443 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 41.122     ;
+; -40.443 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 41.122     ;
+; -40.202 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.881     ;
+; -40.202 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.881     ;
+; -40.202 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.881     ;
+; -40.190 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK2                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.869     ;
+; -40.190 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK2                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.869     ;
+; -40.190 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK2                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.869     ;
+; -40.151 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[0]                                                                    ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.830     ;
+; -40.130 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[0]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.809     ;
+; -40.027 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.706     ;
+; -40.024 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                                                  ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.703     ;
+; -40.014 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_empty                      ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.693     ;
+; -40.014 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.693     ;
+; -39.857 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE3                                          ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.536     ;
+; -39.857 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE3                                          ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.536     ;
+; -39.857 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE3                                          ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.536     ;
+; -39.773 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.452     ;
+; -39.693 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[0]                                                                    ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.372     ;
+; -39.672 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[0]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.351     ;
+; -39.614 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ2                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.293     ;
+; -39.614 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ2                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.293     ;
+; -39.614 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ2                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.293     ;
+; -39.613 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_middle                     ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.292     ;
+; -39.588 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[2]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.267     ;
+; -39.569 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.248     ;
+; -39.566 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                                                  ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.245     ;
+; -39.560 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK3                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.239     ;
+; -39.556 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_empty                      ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.235     ;
+; -39.428 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE3                                          ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 40.107     ;
+; -39.220 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[2]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.899     ;
+; -39.185 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ2                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.864     ;
+; -39.155 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_middle                     ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.834     ;
+; -39.099 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK3                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.778     ;
+; -39.099 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK3                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.778     ;
+; -39.099 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK3                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.778     ;
+; -38.979 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[2]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.658     ;
+; -38.967 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK2                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[2]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.646     ;
+; -38.953 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ7                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.632     ;
+; -38.832 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[0]                                                                    ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.511     ;
+; -38.811 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[0]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.490     ;
+; -38.708 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.387     ;
+; -38.705 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                                                  ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.384     ;
+; -38.695 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_empty                      ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.374     ;
+; -38.634 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE3                                          ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[2]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.313     ;
+; -38.608 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[6]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.287     ;
+; -38.492 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ7                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.171     ;
+; -38.492 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ7                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.171     ;
+; -38.492 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ7                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.171     ;
+; -38.461 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|state_af                                                              ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.140     ;
+; -38.401 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[0]                                                                    ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.080     ;
+; -38.391 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ2                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[2]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.070     ;
+; -38.380 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[0]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.059     ;
+; -38.341 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.020     ;
+; -38.338 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                                                  ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 39.017     ;
+; -38.294 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ5                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_middle                     ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.973     ;
+; -38.264 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_empty                      ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.943     ;
+; -38.232 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:output_buffer|dffs[2] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.911     ;
+; -38.232 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:output_buffer|dffs[2] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.911     ;
+; -38.232 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:output_buffer|dffs[2] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.911     ;
+; -38.223 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK4                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.902     ;
+; -38.211 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK2                                             ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[0]                                                                    ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.890     ;
+; -38.190 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK2                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[0]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.869     ;
+; -38.160 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[0]                                                                    ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.839     ;
+; -38.150 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[6]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.829     ;
+; -38.139 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[0]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.818     ;
+; -38.100 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                           ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.779     ;
+; -38.097 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                           ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                                                  ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.776     ;
+; -38.087 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK2                                             ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.766     ;
+; -38.084 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK2                                             ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                                                  ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.763     ;
+; -38.074 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK2                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_empty                      ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.753     ;
+; -38.023 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                           ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_empty                      ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.702     ;
+; -38.003 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|state_af                                                              ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.682     ;
+; -37.985 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ8                                           ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.664     ;
+; -37.947 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK3                                             ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[0]                                                                    ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.626     ;
+; -37.926 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK3                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[0]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.605     ;
+; -37.876 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK3                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[2]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.555     ;
+; -37.863 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE1                                          ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_middle                     ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.542     ;
+; -37.815 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE3                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[0]                                                                    ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.494     ;
+; -37.810 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK3                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_empty                      ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.489     ;
+; -37.795 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK5                                             ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[5]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.474     ;
+; -37.794 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE3                                          ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[0]                                                                   ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.473     ;
+; -37.762 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK4                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.441     ;
+; -37.762 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK4                                             ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_counter:rd_ptr|cntr_dme:auto_generated|safe_q[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 38.441     ;
++---------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLK'                                                                                                                           ;
++--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+; -6.139 ; 74161:inst3|f74161:sub|9   ; 74161:inst3|f74161:sub|110 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.818      ;
+; -5.979 ; 74161:inst3|f74161:sub|9   ; 74161:inst3|f74161:sub|99  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.658      ;
+; -5.865 ; 74161:inst3|f74161:sub|99  ; 74161:inst3|f74161:sub|110 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.544      ;
+; -5.819 ; 74161:inst3|f74161:sub|9   ; 74161:inst3|f74161:sub|87  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.498      ;
+; -5.523 ; 74161:inst3|f74161:sub|87  ; 74161:inst3|f74161:sub|110 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.202      ;
+; -5.363 ; 74161:inst3|f74161:sub|87  ; 74161:inst3|f74161:sub|99  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 6.042      ;
+; -4.823 ; 74161:inst3|f74161:sub|99  ; 74161:inst3|f74161:sub|99  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.502      ;
+; -4.777 ; 74161:inst3|f74161:sub|9   ; 74161:inst3|f74161:sub|9   ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.456      ;
+; -4.589 ; 74161:inst3|f74161:sub|87  ; 74161:inst3|f74161:sub|87  ; CLK          ; CLK         ; 1.000        ; 0.000      ; 5.268      ;
+; -2.742 ; 74161:inst3|f74161:sub|110 ; 74161:inst3|f74161:sub|110 ; CLK          ; CLK         ; 1.000        ; 0.000      ; 3.421      ;
++--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'FI_CLK'                                                                                                                                                  ;
++--------+---------------------------------+---------------------------------+------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock                 ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+------------------------------+-------------+--------------+------------+------------+
+; -5.954 ; flashInterface:inst2|counter[0] ; flashInterface:inst2|div_clk    ; FI_CLK                       ; FI_CLK      ; 1.000        ; 0.000      ; 6.633      ;
+; -4.205 ; flashInterface:inst2|counter[1] ; flashInterface:inst2|div_clk    ; FI_CLK                       ; FI_CLK      ; 1.000        ; 0.000      ; 4.884      ;
+; -3.131 ; flashInterface:inst2|counter[0] ; flashInterface:inst2|counter[1] ; FI_CLK                       ; FI_CLK      ; 1.000        ; 0.000      ; 3.810      ;
+; -3.126 ; flashInterface:inst2|counter[0] ; flashInterface:inst2|counter[0] ; FI_CLK                       ; FI_CLK      ; 1.000        ; 0.000      ; 3.805      ;
+; -2.746 ; flashInterface:inst2|counter[1] ; flashInterface:inst2|counter[0] ; FI_CLK                       ; FI_CLK      ; 1.000        ; 0.000      ; 3.425      ;
+; -2.742 ; flashInterface:inst2|counter[1] ; flashInterface:inst2|counter[1] ; FI_CLK                       ; FI_CLK      ; 1.000        ; 0.000      ; 3.421      ;
+; 0.127  ; flashInterface:inst2|div_clk    ; flashInterface:inst2|div_clk    ; flashInterface:inst2|div_clk ; FI_CLK      ; 0.500        ; 4.723      ; 5.269      ;
+; 0.627  ; flashInterface:inst2|div_clk    ; flashInterface:inst2|div_clk    ; flashInterface:inst2|div_clk ; FI_CLK      ; 1.000        ; 4.723      ; 5.269      ;
++--------+---------------------------------+---------------------------------+------------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'FI_CLK'                                                                                                                                                  ;
++-------+---------------------------------+---------------------------------+------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock                 ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+------------------------------+-------------+--------------+------------+------------+
+; 0.013 ; flashInterface:inst2|div_clk    ; flashInterface:inst2|div_clk    ; flashInterface:inst2|div_clk ; FI_CLK      ; 0.000        ; 4.723      ; 5.269      ;
+; 0.513 ; flashInterface:inst2|div_clk    ; flashInterface:inst2|div_clk    ; flashInterface:inst2|div_clk ; FI_CLK      ; -0.500       ; 4.723      ; 5.269      ;
+; 3.382 ; flashInterface:inst2|counter[1] ; flashInterface:inst2|counter[1] ; FI_CLK                       ; FI_CLK      ; 0.000        ; 0.000      ; 3.421      ;
+; 3.386 ; flashInterface:inst2|counter[1] ; flashInterface:inst2|counter[0] ; FI_CLK                       ; FI_CLK      ; 0.000        ; 0.000      ; 3.425      ;
+; 3.766 ; flashInterface:inst2|counter[0] ; flashInterface:inst2|counter[0] ; FI_CLK                       ; FI_CLK      ; 0.000        ; 0.000      ; 3.805      ;
+; 3.771 ; flashInterface:inst2|counter[0] ; flashInterface:inst2|counter[1] ; FI_CLK                       ; FI_CLK      ; 0.000        ; 0.000      ; 3.810      ;
+; 4.845 ; flashInterface:inst2|counter[1] ; flashInterface:inst2|div_clk    ; FI_CLK                       ; FI_CLK      ; 0.000        ; 0.000      ; 4.884      ;
+; 6.594 ; flashInterface:inst2|counter[0] ; flashInterface:inst2|div_clk    ; FI_CLK                       ; FI_CLK      ; 0.000        ; 0.000      ; 6.633      ;
++-------+---------------------------------+---------------------------------+------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'flashInterface:inst2|div_clk'                                                                                                                                                                                                                                                                                                                                         ;
++-------+-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                                     ; To Node                                                                                                                       ; Launch Clock                 ; Latch Clock                  ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; 2.440 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_flash2fabric[5]                                                ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[5]                                                ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 2.479      ;
+; 2.440 ; flashInterface:inst2|data_path:DP|memory_register:DP_ADDR_REG|generic_register:ADDR_FULL_REG|output_signal[7]                 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[7]                                                ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 2.479      ;
+; 2.440 ; flashInterface:inst2|data_path:DP|generic_register:FL_READ_REG|output_signal[4]                                               ; flashInterface:inst2|data_path:DP|memory_register:DP_ADDR_REG|generic_register:ADDR_FULL_REG|output_signal[12]                ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 2.479      ;
+; 3.105 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W1                                                            ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W2                                                            ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.144      ;
+; 3.105 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W5                                                            ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W6                                                            ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.144      ;
+; 3.106 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE19                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE20                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.145      ;
+; 3.116 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[5]|dffs[0] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.155      ;
+; 3.117 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE21                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE22                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.156      ;
+; 3.118 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[6] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[6] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.157      ;
+; 3.118 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W3                                                            ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W4                                                            ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.157      ;
+; 3.119 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[5]|dffs[6] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[6] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.158      ;
+; 3.120 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[1]|dffs[0] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.159      ;
+; 3.120 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE33                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE34                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.159      ;
+; 3.120 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W9                                                            ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W10                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.159      ;
+; 3.128 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[1]|dffs[4] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[4] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.167      ;
+; 3.128 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[1]|dffs[5] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[5] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.167      ;
+; 3.129 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[5]|dffs[7] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[7] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.168      ;
+; 3.130 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[0] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[5]|dffs[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.169      ;
+; 3.130 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[3] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[0]|dffs[3] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.169      ;
+; 3.130 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ1                                               ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ2                                               ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.169      ;
+; 3.131 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[1] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[5]|dffs[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.170      ;
+; 3.131 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W7                                                            ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W8                                                            ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.170      ;
+; 3.132 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[1]|dffs[3] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[3] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.171      ;
+; 3.134 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE26                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE27                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.173      ;
+; 3.135 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[2] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[0]|dffs[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.174      ;
+; 3.135 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE24                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE25                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.174      ;
+; 3.135 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W8                                                            ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W9                                                            ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.174      ;
+; 3.136 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[1] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[0]|dffs[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.175      ;
+; 3.136 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[5] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[5]|dffs[5] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.175      ;
+; 3.142 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[7] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[5]|dffs[7] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.181      ;
+; 3.142 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W16                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W17                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.181      ;
+; 3.143 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[2] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.182      ;
+; 3.143 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[3] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[5]|dffs[3] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.182      ;
+; 3.143 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[4] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[4] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.182      ;
+; 3.143 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[5] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[5] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.182      ;
+; 3.144 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[2] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[5]|dffs[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.183      ;
+; 3.145 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[7] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[7] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.184      ;
+; 3.146 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W21                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W22                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.185      ;
+; 3.146 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.POLL1                                                         ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.POLL2                                                         ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.185      ;
+; 3.155 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[2] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.194      ;
+; 3.157 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.POLL3                                                         ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.POLL4                                                         ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.196      ;
+; 3.162 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[7] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[7] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.201      ;
+; 3.165 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W_POLL4                                                       ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W_POLL5                                                       ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.204      ;
+; 3.166 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE16                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE17                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.205      ;
+; 3.168 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W_POLL3                                                       ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W_POLL4                                                       ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.207      ;
+; 3.175 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W15                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W16                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.214      ;
+; 3.363 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[4] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[4] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.402      ;
+; 3.367 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[1]|dffs[2] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.406      ;
+; 3.367 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[4] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[4] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.406      ;
+; 3.370 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[3] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[3] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.409      ;
+; 3.375 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK4                                                 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK4                                                 ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.414      ;
+; 3.376 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[2] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[2] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.415      ;
+; 3.376 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE5                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE6                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.415      ;
+; 3.379 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE13                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE14                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.418      ;
+; 3.380 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[0] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.419      ;
+; 3.381 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[1]|dffs[1] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.420      ;
+; 3.381 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[5] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[5] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.420      ;
+; 3.382 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[1]|dffs[6] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[6] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.421      ;
+; 3.382 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[1]|dffs[7] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[7] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.421      ;
+; 3.387 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE8                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE9                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.426      ;
+; 3.389 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W22                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W23                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.428      ;
+; 3.392 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[1] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.431      ;
+; 3.392 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[5] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[5] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.431      ;
+; 3.392 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE3                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE4                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.431      ;
+; 3.393 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[0] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.432      ;
+; 3.394 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[6]|dffs[1] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.433      ;
+; 3.395 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W13                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W14                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.434      ;
+; 3.396 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[7] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[7] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.435      ;
+; 3.396 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE27                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE28                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.435      ;
+; 3.396 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.POLL2                                                         ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.POLL3                                                         ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.435      ;
+; 3.400 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE31                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE32                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.439      ;
+; 3.402 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[3] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[4]|dffs[3] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.441      ;
+; 3.403 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[3] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[3] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.442      ;
+; 3.404 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE30                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE31                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.443      ;
+; 3.407 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[1] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[1] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.446      ;
+; 3.407 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.R4                                                            ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|OE_reg                                                              ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.446      ;
+; 3.408 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W19                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W20                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.447      ;
+; 3.408 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE23                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE24                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.447      ;
+; 3.409 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W17                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W18                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.448      ;
+; 3.410 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[2]|dffs[0] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[3]|dffs[0] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.449      ;
+; 3.411 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE9                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE10                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.450      ;
+; 3.411 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W23                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W24                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.450      ;
+; 3.412 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ9                                               ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ9                                               ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.451      ;
+; 3.415 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE6                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE7                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.454      ;
+; 3.459 ; flashInterface:inst2|FTDI_coms:FTDI|state.IDLE                                                                                ; flashInterface:inst2|FTDI_coms:FTDI|state.W1                                                                                  ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.498      ;
+; 3.740 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                                 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.SEND_ACK1                                                 ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.779      ;
+; 3.751 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                               ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_READ6                                               ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.790      ;
+; 3.776 ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE3                                              ; flashInterface:inst2|flashProgrammer_controller:FP_CONTROLLER|state.FLASH_WRITE3                                              ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.815      ;
+; 3.777 ; flashInterface:inst2|FTDI_coms:FTDI|state.W1                                                                                  ; flashInterface:inst2|FTDI_coms:FTDI|state.W1                                                                                  ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.816      ;
+; 3.780 ; flashInterface:inst2|FTDI_coms:FTDI|FT240X:FTDI|state.IDLE                                                                    ; flashInterface:inst2|FTDI_coms:FTDI|FT240X:FTDI|state.W1                                                                      ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.819      ;
+; 3.790 ; flashInterface:inst2|FTDI_coms:FTDI|FT240X:FTDI|state.R1                                                                      ; flashInterface:inst2|FTDI_coms:FTDI|FT240X:FTDI|state.R2                                                                      ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.829      ;
+; 3.801 ; flashInterface:inst2|FTDI_coms:FTDI|FT240X:FTDI|state.W2                                                                      ; flashInterface:inst2|FTDI_coms:FTDI|FT240X:FTDI|state.W2                                                                      ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.840      ;
+; 3.826 ; flashInterface:inst2|flash_module:FLASH_MOD|state.ERASE_FLASH                                                                 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE1                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 3.865      ;
+; 3.975 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_flash2fabric[6]                                                ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|data_fabric2flash[6]                                                ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 4.014      ;
+; 4.143 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W6                                                            ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W7                                                            ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 4.182      ;
+; 4.143 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W2                                                            ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W3                                                            ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 4.182      ;
+; 4.148 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE10                                                          ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE11                                                          ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 4.187      ;
+; 4.149 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[7]|dffs[7] ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|lpm_ff:last_data_node[0]|dffs[7] ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 4.188      ;
+; 4.171 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W11                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.W12                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 4.210      ;
+; 4.172 ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE2                                                           ; flashInterface:inst2|flash_module:FLASH_MOD|SST39SF:FLASH|state.CE3                                                           ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 4.211      ;
++-------+-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLK'                                                                                                                           ;
++-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+; 3.382 ; 74161:inst3|f74161:sub|110 ; 74161:inst3|f74161:sub|110 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 3.421      ;
+; 5.229 ; 74161:inst3|f74161:sub|87  ; 74161:inst3|f74161:sub|87  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.268      ;
+; 5.417 ; 74161:inst3|f74161:sub|9   ; 74161:inst3|f74161:sub|9   ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.456      ;
+; 5.463 ; 74161:inst3|f74161:sub|99  ; 74161:inst3|f74161:sub|99  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 5.502      ;
+; 5.964 ; 74161:inst3|f74161:sub|87  ; 74161:inst3|f74161:sub|99  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 6.003      ;
+; 6.108 ; 74161:inst3|f74161:sub|87  ; 74161:inst3|f74161:sub|110 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 6.147      ;
+; 6.419 ; 74161:inst3|f74161:sub|9   ; 74161:inst3|f74161:sub|87  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 6.458      ;
+; 6.465 ; 74161:inst3|f74161:sub|99  ; 74161:inst3|f74161:sub|110 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 6.504      ;
+; 6.563 ; 74161:inst3|f74161:sub|9   ; 74161:inst3|f74161:sub|99  ; CLK          ; CLK         ; 0.000        ; 0.000      ; 6.602      ;
+; 6.707 ; 74161:inst3|f74161:sub|9   ; 74161:inst3|f74161:sub|110 ; CLK          ; CLK         ; 0.000        ; 0.000      ; 6.746      ;
++-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'flashInterface:inst2|div_clk'                                                                                                                                                                                                                                                       ;
++--------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                                    ; To Node                                         ; Launch Clock                 ; Latch Clock                  ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; -7.821 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_empty ; flashInterface:inst2|FTDI_coms:FTDI|FT_rrdy_reg ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 8.500      ;
+; -5.863 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|state_af                                         ; flashInterface:inst2|FTDI_coms:FTDI|FT_rrdy_reg ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 1.000        ; 0.000      ; 6.542      ;
++--------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'flashInterface:inst2|div_clk'                                                                                                                                                                                                                                                       ;
++-------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                                    ; To Node                                         ; Launch Clock                 ; Latch Clock                  ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+; 6.503 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|state_af                                         ; flashInterface:inst2|FTDI_coms:FTDI|FT_rrdy_reg ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 6.542      ;
+; 8.461 ; flashInterface:inst2|FTDI_coms:FTDI|FIFO8x8_5:RXBUF|scfifo:scfifo_component|a_fffifo:subfifo|a_fefifo:fifo_state|state_empty ; flashInterface:inst2|FTDI_coms:FTDI|FT_rrdy_reg ; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 0.000        ; 0.000      ; 8.500      ;
++-------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+------------------------------+------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                         ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; From Clock                   ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; CLK                          ; CLK                          ; 16       ; 0        ; 0        ; 0        ;
+; FI_CLK                       ; FI_CLK                       ; 6        ; 0        ; 0        ; 0        ;
+; flashInterface:inst2|div_clk ; FI_CLK                       ; 1        ; 1        ; 0        ; 0        ;
+; CLK                          ; flashInterface:inst2|div_clk ; 4        ; 0        ; 0        ; 0        ;
+; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 18252    ; 0        ; 0        ; 0        ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                          ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; From Clock                   ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; CLK                          ; CLK                          ; 16       ; 0        ; 0        ; 0        ;
+; FI_CLK                       ; FI_CLK                       ; 6        ; 0        ; 0        ; 0        ;
+; flashInterface:inst2|div_clk ; FI_CLK                       ; 1        ; 1        ; 0        ; 0        ;
+; CLK                          ; flashInterface:inst2|div_clk ; 4        ; 0        ; 0        ; 0        ;
+; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 18252    ; 0        ; 0        ; 0        ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                      ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; From Clock                   ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 2        ; 0        ; 0        ; 0        ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                       ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; From Clock                   ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; 2        ; 0        ; 0        ; 0        ;
++------------------------------+------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 21    ; 21   ;
+; Unconstrained Input Port Paths  ; 896   ; 896  ;
+; Unconstrained Output Ports      ; 40    ; 40   ;
+; Unconstrained Output Port Paths ; 362   ; 362  ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------------------------+
+; Clock Status Summary                                                             ;
++------------------------------+------------------------------+------+-------------+
+; Target                       ; Clock                        ; Type ; Status      ;
++------------------------------+------------------------------+------+-------------+
+; CLK                          ; CLK                          ; Base ; Constrained ;
+; FI_CLK                       ; FI_CLK                       ; Base ; Constrained ;
+; flashInterface:inst2|div_clk ; flashInterface:inst2|div_clk ; Base ; Constrained ;
++------------------------------+------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; FI_RST     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[0]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[1]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[2]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[3]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[4]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[5]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[6]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[7]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_RXF_n   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_TXE_n   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; PROG_en    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RST        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; FL_ALE        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_CEn        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[6]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[7]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_OEn        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_WEn        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_RD_n       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_RX_LED     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_TX_LED     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_WR_n       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[7]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; PROG_en_ind   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; FI_RST     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[0]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[1]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[2]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[3]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[4]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[5]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[6]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[7]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_RXF_n   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_TXE_n   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; PROG_en    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RST        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; FL_ALE        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_CEn        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[6]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_IO[7]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_OEn        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_WEn        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FL_addrOut[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_RD_n       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_RX_LED     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_TX_LED     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_WR_n       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; FT_data[7]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; PROG_en_ind   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; output[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Fri Sep 01 05:29:13 2017
+Info: Command: quartus_sta flashInterface_TutProject -c flashInterface_TutProject
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'flashInterface_TutProject.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name flashInterface:inst2|div_clk flashInterface:inst2|div_clk
+    Info (332105): create_clock -period 1.000 -name FI_CLK FI_CLK
+    Info (332105): create_clock -period 1.000 -name CLK CLK
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -42.498
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -42.498           -4630.941 flashInterface:inst2|div_clk 
+    Info (332119):    -6.139             -22.714 CLK 
+    Info (332119):    -5.954             -12.211 FI_CLK 
+Info (332146): Worst-case hold slack is 0.013
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.013               0.000 FI_CLK 
+    Info (332119):     2.440               0.000 flashInterface:inst2|div_clk 
+    Info (332119):     3.382               0.000 CLK 
+Info (332146): Worst-case recovery slack is -7.821
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -7.821              -7.821 flashInterface:inst2|div_clk 
+Info (332146): Worst-case removal slack is 6.503
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     6.503               0.000 flashInterface:inst2|div_clk 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 CLK 
+    Info (332119):    -2.289              -2.289 FI_CLK 
+    Info (332119):     0.161               0.000 flashInterface:inst2|div_clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 753 megabytes
+    Info: Processing ended: Fri Sep 01 05:29:14 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

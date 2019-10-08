@@ -1,0 +1,348 @@
+@page
+{  size:auto;
+   margin:10%;
+}
+
+#footer
+{  color:white;
+   font-size:1pt;
+   display: none;
+}
+
+BODY
+{  font-family:Helvetica,Arial,sans-serif;
+   /*font-size: 11pt;*/
+   color:black;
+   /*background-color:white;*/
+   text-align:justify;
+   background-image:url("yellow-pale.png");
+}
+
+BODY.notop 
+{  margin-top: 0px;
+}
+
+BODY.nomargin
+{  margin-top: 0px;
+   margin-left: 0px;
+   margin-right: 0px;
+}
+
+
+/* ----- Anchors and links -------------------------------------------------- */
+
+a:link
+{  text-decoration:underline;
+   color:#0000a0; 
+}
+
+a:visited
+{  text-decoration:underline;
+   color:#0040a0;
+}
+
+a:active
+{  text-decoration:underline;
+   color:#4000a0;
+}
+
+a:hover
+{  text-decoration:underline;
+   color:#6000a0;
+}
+
+a.quiet
+{  text-decoration:none;
+   color:black;
+}
+
+a:hover.quiet
+{  text-decoration:underline;
+   color:#6000a0;
+}
+
+/* ----- Headings ----------------------------------------------------------- */
+
+H1
+{  font-family:Helvetica,Arial,sans-serif;
+   /*font-size:16pt;*/
+   font-size:"160%";
+   font-weight:bold;
+}
+H1.page
+{  page-break-before:always;
+}
+
+/* .......................................................................... */
+
+H2
+{  font-family:Helvetica,Arial,sans-serif;
+   /*font-size:14pt;*/
+   font-size:"140%";
+   font-weight:bold;
+}
+H2.page
+{  page-break-before:always;
+}
+H2.bar
+{  background:#e8e000; 
+   padding:3px; 
+   margin-top:3px;
+   margin-bottom:0px; 
+}
+
+/* .......................................................................... */
+
+H3
+{  font-family:Helvetica,Arial,sans-serif;
+   font-weight:bold;
+   /*font-size:12pt;*/
+   font-size:"120%";
+}
+H3.page
+{  page-break-before:always;
+}
+H3.bar
+{  background:#e8e8e8; 
+   padding:2px; 
+   margin-bottom:2px;
+   margin-top:0px;
+}
+
+/* .......................................................................... */
+
+H4
+{  font-family:Helvetica,Arial,sans-serif;
+   font-weight:bold;
+   font-size:"110%";
+}
+H5,H6
+{  font-family:Helvetica,Arial,sans-serif;
+   font-weight:bold;
+}
+
+/* .......................................................................... */
+
+H5
+{  font-weight:bold;
+   color:black;
+}
+H5.bar
+{  background:#f0f0f0; 
+   padding:1px;
+   margin-bottom:1px;
+   margin-top:0px; 
+}
+
+/* .......................................................................... */
+
+H6
+{  font-weight:bold;
+   color:black;
+}
+H6.bar
+{  background:#f0f0f0; 
+   padding:1px;
+   margin-bottom:1px;
+   margin-top:0px; 
+}
+
+/* ----- Paragraphs --------------------------------------------------------- */
+
+P
+{  font-family:Helvetica,Arial;
+   /*font-size: 11pt;  */
+   color:black;
+   /*background-color:white;*/
+   text-align:justify;
+   //background-image:url("yellow-pale.png");
+}
+
+P.error
+{  color:red;
+}
+
+P.cvs
+{  font-family:Helvetica,Arial,sans-serif;
+   font-size:80%;	/*font-size:8pt;*/
+   color:black;
+   margin-bottom:0pt;
+   text-align:left;
+}
+
+P.print
+{  color:white;
+   font-size:1pt;
+   display:none;
+}
+
+DIV.footerclass
+{  color:white;
+   font-size:1pt;
+   display: none;
+}
+
+DIV.waterclass
+{  color:white;
+   font-size:1pt;
+   display: none;
+}
+
+SPAN.screen
+{  
+}
+
+PRE
+{  font-family:"Lucida Console","Courier New",Courier,monospace;
+   color:black;
+   /*background-color:white;*/
+   text-align:left;
+   //background-image:url("yellow-pale.png");
+}
+
+
+/* ----- Lists -------------------------------------------------------------- */
+
+OL,UL,LI
+{  color:black;
+   text-align:left;
+}
+
+
+/* ----- Tables ------------------------------------------------------------- */
+
+TABLE
+{  border:2pt solid rgb(128,0,0);	/* dark green sampled from the logo */
+   border-collapse:collapse;
+   /*border:outset 1pt;*/
+   /*border:inset 1pt; */
+   empty-cells:show;
+}
+TR
+{ }
+TH
+{  font-family:Helvetica,Arial,sans-serif;
+   font-weight:bold;
+   /*font-size:12pt;*/
+   font-size:"120%";
+   text-align:left;
+   color:white;
+   background-color:rgb(128,0,0);	/* same as in TABLE */
+   padding:2pt;
+}
+TD
+{  border:2pt solid rgb(128,0,0);	/* same as in TABLE */
+   padding:2pt;
+   text-align:left;
+   vertical-align:top;
+}
+
+TD.grey1
+{  background:#e0e0e0;
+}
+TD.grey2
+{  background:#f0f0f0;
+}
+TD.c
+{  text-align:center;
+}
+
+/* .......................................................................... */
+
+TABLE.field
+{  border:2pt solid rgb(0,0,128); 
+   border-collapse:collapse;
+   border-spacing:1pt;
+   padding:1pt;
+   margin:1pt;
+   empty-cells:show;
+}
+
+TR.field
+{
+   border-width:0px;
+}
+
+TH.field
+{  font-weight:bold;
+   font-size:"120%";
+   text-align:center;
+   color:white;
+   background-color:rgb(0,0,128);
+   border:1pt solid rgb(0,0,128); 
+}
+
+TD.field
+{  text-align:center;
+   border:1pt solid rgb(0,0,128); 
+}
+
+/* .......................................................................... */
+
+TABLE.value
+{  border:2pt solid rgb(0,128,0);
+   border-collapse:collapse;
+   border-spacing:1pt;
+   padding:1pt;
+   margin:1pt;
+   empty-cells:show;
+}
+
+TH.value
+{  text-align:center;
+   color:white;
+   background-color:rgb(0,128,0);
+   border:1pt solid rgb(0,128,0); 
+}
+
+TD.value
+{  text-align:left;
+   border:1pt solid rgb(0,128,0); 
+}
+
+/* .......................................................................... */
+
+TABLE.invis
+{  border:none;
+   width:100%;
+   padding:0px;
+   margin:0px;
+}
+
+TD.invis
+{  border:0px;
+   padding:1px;
+   spacing:2px;
+   text-align:left;
+   vertical-align:top;
+   border-left-style:hidden;
+   border-top-style:hidden;
+   border-bottom-style:hidden;
+}
+
+TABLE.noborder
+{  border:none;
+}
+
+TD.noborder
+{  border:none;
+}
+
+TD.noborderc
+{  border:none;
+   text-align:center;
+}
+
+A.mail
+{  font-family:"Courier New",Courier,monospace;
+   font-size:"100%";
+}
+
+code,tt,pre
+{  font-family:"Courier New",Courier,monospace;
+   font-size:"100%";
+}
+
+/* ----- EOF ----- */
+
+

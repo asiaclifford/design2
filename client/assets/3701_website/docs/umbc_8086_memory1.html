@@ -1,0 +1,1413 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+<LINK REL="STYLESHEET" HREF="http://web.archive.org/web/20080621153851cs_/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1.css">
+<TITLE> Memory Types</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<font color="red"><B> Originally posted at http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1.html<B> </font>
+<br><br>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px; z-index:9000;">
+<div id="wm-ipp-inside" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(http://staticweb.archive.org/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="http://wayback.archive.org/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="http://staticweb.archive.org/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="http://wayback.archive.org/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1.html" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20080621153851" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="http://web.archive.org/web/20080501183322/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2008"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 15:38:51 Jun 21, 2008">JUN</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Jul
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="http://web.archive.org/web/20080501183322/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1.html" title="18:33:22 May 1, 2008" style="background-color:transparent;border:none;"><img src="http://staticweb.archive.org/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 15:38:51 Jun 21, 2008">21</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="http://staticweb.archive.org/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="http://web.archive.org/web/20070607184607/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="7 Jun 2007"><strong>2007</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 15:38:51 Jun 21, 2008">2008</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2009
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="http://wayback.archive.org/web/20080621153851*/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1.html" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>27 captures</strong></a>
+           <div style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">29 Jun 02 - 21 Jun 08</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:400px;height:27px;" href="" id="wm-graph-anchor">
+       <div id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:400px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="400"
+				height="27"
+				border="0"
+				src="http://wayback.archive.org/jsp/graph.jsp?graphdata=400_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000001010010_2003:-1:000100001101_2004:-1:010010110101_2005:-1:001000000000_2006:-1:000000000001_2007:-1:010111220001_2008:5:010011000000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="http://staticweb.archive.org/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="http://staticweb.archive.org/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(http://staticweb.archive.org/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(http://staticweb.archive.org/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=596635">
+ </A>
+Memory Types</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=602302">
+ </A>
+<EM CLASS="StdFmt">
+Two basic types:</EM>
+</LI>
+<LI type=disk CLASS="Bulleted1">
+<A NAME="pgfId=602308">
+ </A>
+<EM CLASS="StdFmt">
+ </EM>
+<Strong CLASS="BoldFmt">
+ROM</Strong>
+<EM CLASS="StdFmt">
+: Read-only memory</EM>
+</LI type=disk>
+<LI type=disk CLASS="Bulleted1">
+<A NAME="pgfId=602309">
+ </A>
+<EM CLASS="StdFmt">
+ </EM>
+<Strong CLASS="BoldFmt">
+RAM</Strong>
+<EM CLASS="StdFmt">
+: Read-Write memory</EM>
+</LI type=disk>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=602310">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=602311">
+ </A>
+<EM CLASS="StdFmt">
+Four commonly used memories:</EM>
+</LI>
+<LI type=disk CLASS="Bulleted1">
+<A NAME="pgfId=602312">
+ </A>
+<EM CLASS="StdFmt">
+ ROM</EM>
+</LI type=disk>
+<LI type=disk CLASS="Bulleted1">
+<A NAME="pgfId=602313">
+ </A>
+<EM CLASS="StdFmt">
+ Flash (EEPROM)</EM>
+</LI type=disk>
+<LI type=disk CLASS="Bulleted1">
+<A NAME="pgfId=602314">
+ </A>
+<EM CLASS="StdFmt">
+ Static RAM (SRAM)</EM>
+</LI type=disk>
+<LI type=disk CLASS="Bulleted1">
+<A NAME="pgfId=602315">
+ </A>
+<EM CLASS="StdFmt">
+ Dynamic RAM (DRAM)</EM>
+</LI type=disk>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=602316">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=602317">
+ </A>
+<EM CLASS="StdFmt">
+Generic pin configuration:</EM>
+</LI>
+</UL>
+<DIV>
+<IMG SRC="http://web.archive.org/web/20080621153851im_/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1-1.gif">
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=602392">
+ </A>
+Memory Chips</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=602404">
+ </A>
+<EM CLASS="StdFmt">
+The number of address pins is related to the number of </EM>
+<EM CLASS="ItalicFmt">
+memory locations</EM>
+<EM CLASS="StdFmt">
+.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602405">
+ </A>
+<EM CLASS="StdFmt">
+Common sizes today are </EM>
+<Strong CLASS="BoldFmt">
+1K</Strong>
+<EM CLASS="StdFmt">
+ to </EM>
+<Strong CLASS="BoldFmt">
+256M</Strong>
+<EM CLASS="StdFmt">
+ locations.</EM>
+</LI>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602430">
+ </A>
+<EM CLASS="StdFmt">
+Therefore, between 10 and 28 address pins are present.</EM>
+</LI>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=602390">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=602431">
+ </A>
+<EM CLASS="StdFmt">
+The data pins are typically </EM>
+<EM CLASS="ItalicFmt">
+bi-directional</EM>
+<EM CLASS="StdFmt">
+ in read-write memories.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602434">
+ </A>
+<EM CLASS="StdFmt">
+The number of data pins is related to the size of the </EM>
+<EM CLASS="ItalicFmt">
+memory location</EM>
+<EM CLASS="StdFmt">
+.</EM>
+</LI>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602435">
+ </A>
+<EM CLASS="StdFmt">
+For example, an 8-bit wide (byte-wide) memory device has </EM>
+<Strong CLASS="BoldFmt">
+8</Strong>
+<EM CLASS="StdFmt">
+ data pins.</EM>
+</LI>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602438">
+ </A>
+<EM CLASS="StdFmt">
+Catalog listing of </EM>
+<EM CLASS="ItalicFmt">
+1K X 8 </EM>
+<EM CLASS="StdFmt">
+indicate a byte addressable </EM>
+8K<EM CLASS="StdFmt">
+ memory.</EM>
+</LI>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=602437">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=602441">
+ </A>
+<EM CLASS="StdFmt">
+Each memory device has at least one </EM>
+<EM CLASS="ItalicFmt">
+chip select</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+CS<EM CLASS="StdFmt">
+) or </EM>
+<EM CLASS="ItalicFmt">
+chip enable</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+CE<EM CLASS="StdFmt">
+) or </EM>
+<EM CLASS="ItalicFmt">
+select</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+S<EM CLASS="StdFmt">
+) pin that enables the memory device.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602443">
+ </A>
+<EM CLASS="StdFmt">
+This enables read and/or write operations.</EM>
+</LI>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602444">
+ </A>
+<EM CLASS="StdFmt">
+If more than one are present, then all must be 0 in order to perform a read or write.</EM>
+</LI>
+</UL>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=602455">
+ </A>
+Memory Chips</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=602463">
+ </A>
+<EM CLASS="StdFmt">
+Each memory device has at least one control pin.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602464">
+ </A>
+<EM CLASS="StdFmt">
+For ROMs, an </EM>
+<EM CLASS="ItalicFmt">
+output enable</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+OE<EM CLASS="StdFmt">
+) or </EM>
+<EM CLASS="ItalicFmt">
+gate</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+G<EM CLASS="StdFmt">
+) is present. </EM>
+</LI>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=602474">
+ </A>
+<EM CLASS="StdFmt">
+The </EM>
+OE<EM CLASS="StdFmt">
+ pin enables and disables a set of tristate buffers.</EM>
+</LI>
+</UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602467">
+ </A>
+<EM CLASS="StdFmt">
+For RAMs, a </EM>
+<EM CLASS="ItalicFmt">
+read-write</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+R/W<EM CLASS="StdFmt">
+) or </EM>
+<EM CLASS="ItalicFmt">
+write enable</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+WE<EM CLASS="StdFmt">
+) and </EM>
+<EM CLASS="ItalicFmt">
+read enable</EM>
+ (OE<EM CLASS="StdFmt">
+) are present.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=602487">
+ </A>
+<EM CLASS="StdFmt">
+For dual control pin devices, it must be hold true that both are not 0 at the same time.</EM>
+</LI>
+</UL>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=602449">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=602490">
+ </A>
+<EM CLASS="StdFmt">
+ROM: </EM>
+</LI>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602488">
+ </A>
+<EM CLASS="StdFmt">
+Non-volatile memory: Maintains its state when powered down.</EM>
+</LI>
+<LI CLASS="Indent2">
+<A NAME="pgfId=602505">
+ </A>
+<EM CLASS="StdFmt">
+There are several forms:</EM>
+</LI>
+</UL>
+<LI type=disk CLASS="Bulleted2">
+<A NAME="pgfId=602506">
+ </A>
+ <Strong CLASS="BoldFmt">
+ROM</Strong>
+<EM CLASS="StdFmt">
+: Factory programmed, cannot be changed. Older style.</EM>
+</LI type=disk>
+<LI type=disk CLASS="Bulleted2">
+<A NAME="pgfId=602509">
+ </A>
+ <Strong CLASS="BoldFmt">
+PROM</Strong>
+<EM CLASS="StdFmt">
+: Programmable Read-Only Memory. </EM>
+</LI type=disk>
+<UL>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=602510">
+ </A>
+<EM CLASS="StdFmt">
+Field programmable but only once. Older style.</EM>
+</LI>
+</UL>
+</UL>
+<LI type=disk CLASS="Bulleted2">
+<A NAME="pgfId=602507">
+ </A>
+ <Strong CLASS="BoldFmt">
+EPROM</Strong>
+<EM CLASS="StdFmt">
+: Erasable Programmable Read-Only Memory. </EM>
+</LI type=disk>
+<UL>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=602508">
+ </A>
+<EM CLASS="StdFmt">
+Reprogramming requires up to 20 minutes of high-intensity UV light exposure.</EM>
+</LI>
+</UL>
+</UL>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=602513">
+ </A>
+Memory Chips</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=602511">
+ </A>
+<EM CLASS="StdFmt">
+ROMs (cont):</EM>
+</LI>
+<LI type=disk CLASS="Bulleted2">
+<A NAME="pgfId=602520">
+ </A>
+ <Strong CLASS="BoldFmt">
+Flash EEPROM</Strong>
+<EM CLASS="StdFmt">
+: Electrically Erasable Programmable ROM.</EM>
+</LI type=disk>
+<UL>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=602523">
+ </A>
+<EM CLASS="StdFmt">
+Also called </EM>
+<Strong CLASS="BoldFmt">
+EAROM</Strong>
+<EM CLASS="StdFmt">
+ (Electrically Alterable ROM) and </EM>
+<Strong CLASS="BoldFmt">
+NOVRAM</Strong>
+<EM CLASS="StdFmt">
+ (NOn-Volatile RAM).</EM>
+</LI>
+<LI CLASS="Indent3">
+<A NAME="pgfId=602524">
+ </A>
+<EM CLASS="StdFmt">
+Writing is much slower than a normal RAM.</EM>
+</LI>
+</UL>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=603768">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<UL>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=602525">
+ </A>
+<EM CLASS="StdFmt">
+Used to store setup information, e.g. video card, on computer systems.</EM>
+</LI>
+<LI CLASS="Indent3">
+<A NAME="pgfId=602526">
+ </A>
+<EM CLASS="StdFmt">
+Can be used to replace EPROM for BIOS memory.</EM>
+</LI>
+</UL>
+</UL>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=603065">
+ </A>
+EPROMs</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=603063">
+ </A>
+<EM CLASS="StdFmt">
+Intel 2716 EPROM (2K X 8):</EM>
+</LI>
+</UL>
+<DIV>
+<IMG SRC="http://web.archive.org/web/20080621153851im_/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1-2.gif">
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=602948">
+ </A>
+EPROMs</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=602942">
+ </A>
+<EM CLASS="StdFmt">
+2716 Timing diagram:</EM>
+</LI>
+</UL>
+<DIV>
+<IMG SRC="http://web.archive.org/web/20080621153851im_/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1-3.gif">
+</DIV>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=603271">
+ </A>
+<EM CLASS="StdFmt">
+Sample of the data sheet for the 2716 A.C. Characteristics.</EM>
+</LI>
+<TABLE BORDER="1">
+<TR>
+<TH ROWSPAN="2" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=603370">
+ </A>
+Symbol</P>
+</TH>
+<TH ROWSPAN="2" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=603372">
+ </A>
+Parameter</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="3">
+<P CLASS="CellHeading">
+<A NAME="pgfId=603374">
+ </A>
+Limits</P>
+</TH>
+<TH ROWSPAN="2" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=603380">
+ </A>
+Unit</P>
+</TH>
+<TH ROWSPAN="2" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=603382">
+ </A>
+Test Condition</P>
+</TH>
+</TR>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=603388">
+ </A>
+Min</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=603390">
+ </A>
+Typ.</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=603392">
+ </A>
+Max</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603398">
+ </A>
+tACC1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603400">
+ </A>
+Addr. to Output Delay</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603402">
+ </A>
+&nbsp;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603404">
+ </A>
+250</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603406">
+ </A>
+450</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603408">
+ </A>
+ns</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603410">
+ </A>
+PD/PGM= CS =VIL</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603412">
+ </A>
+tOH</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603414">
+ </A>
+Addr. to Output Hold</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603416">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603418">
+ </A>
+&nbsp;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603420">
+ </A>
+&nbsp;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603422">
+ </A>
+ns</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603478">
+ </A>
+PD/PGM= CS =VIL</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603426">
+ </A>
+tDF</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603428">
+ </A>
+Chip Deselect to Output Float</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603430">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603432">
+ </A>
+&nbsp;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603434">
+ </A>
+100</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603436">
+ </A>
+ns</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603516">
+ </A>
+PD/PGM=VIL</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603440">
+ </A>
+...</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603442">
+ </A>
+...</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603444">
+ </A>
+...</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603446">
+ </A>
+...</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603448">
+ </A>
+...</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603450">
+ </A>
+...</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=603452">
+ </A>
+...</P>
+</TD>
+</TR>
+</TABLE>
+<LI CLASS="Indent1">
+<A NAME="pgfId=603530">
+ </A>
+<EM CLASS="StdFmt">
+This EPROM requires a wait state for use with the 8086 (</EM>
+<EM CLASS="ItalicFmt">
+460ns</EM>
+<EM CLASS="StdFmt">
+ constraint).</EM>
+</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=603527">
+ </A>
+SRAMs</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=603523">
+ </A>
+<EM CLASS="StdFmt">
+TI TMS 4016 SRAM (2K X 8):</EM>
+</LI>
+</UL>
+<DIV>
+<IMG SRC="http://web.archive.org/web/20080621153851im_/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1-4.gif">
+</DIV>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=603743">
+ </A>
+<EM CLASS="StdFmt">
+Virtually identical to the EPROM with respect to the pinout.</EM>
+</LI>
+<LI CLASS="Indent1">
+<A NAME="pgfId=603757">
+ </A>
+<EM CLASS="StdFmt">
+However, access time is faster (250ns).</EM>
+</LI>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=603755">
+ </A>
+<EM CLASS="StdFmt">
+See the timing diagrams and data sheets in text.</EM>
+</LI>
+</UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=603756">
+ </A>
+<EM CLASS="StdFmt">
+SRAMs used for </EM>
+<EM CLASS="ItalicFmt">
+caches</EM>
+<EM CLASS="StdFmt">
+ have access times as low as </EM>
+<EM CLASS="ItalicFmt">
+10ns</EM>
+<EM CLASS="StdFmt">
+.</EM>
+</LI>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=603762">
+ </A>
+DRAMs</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=603760">
+ </A>
+<EM CLASS="StdFmt">
+DRAM:</EM>
+</LI>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=603804">
+ </A>
+<EM CLASS="StdFmt">
+SRAMs are limited in size (up to about 128K X 8).</EM>
+</LI>
+<LI CLASS="Indent2">
+<A NAME="pgfId=603805">
+ </A>
+<EM CLASS="StdFmt">
+DRAMs are available in much larger sizes, e.g., 64M X 1.</EM>
+</LI>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=603806">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=603807">
+ </A>
+<EM CLASS="StdFmt">
+DRAMs MUST be refreshed (rewritten) every </EM>
+<Strong CLASS="BoldFmt">
+2</Strong>
+<EM CLASS="StdFmt">
+ to </EM>
+<Strong CLASS="BoldFmt">
+4 </Strong>
+<EM CLASS="StdFmt">
+ms</EM>
+</LI>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=603811">
+ </A>
+<EM CLASS="StdFmt">
+Since they store their value on an integrated capacitor that loses charge over time.</EM>
+</LI>
+</UL>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=603812">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=603813">
+ </A>
+<EM CLASS="StdFmt">
+This refresh is performed by a special circuit in the DRAM which refreshes the entire memory using </EM>
+<EM CLASS="ItalicFmt">
+256 </EM>
+<EM CLASS="StdFmt">
+reads.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=603814">
+ </A>
+<EM CLASS="StdFmt">
+Refresh also occurs on a normal read, write or during a special refresh cycle.</EM>
+</LI>
+<LI CLASS="Indent3">
+<A NAME="pgfId=603815">
+ </A>
+<EM CLASS="StdFmt">
+More on this later.</EM>
+</LI>
+</UL>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=603808">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=603816">
+ </A>
+<EM CLASS="StdFmt">
+The large storage capacity of DRAMs make it impractical to add the required number of address pins.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=603819">
+ </A>
+<EM CLASS="StdFmt">
+Instead, the address pins are </EM>
+<EM CLASS="ItalicFmt">
+multiplexed</EM>
+<EM CLASS="StdFmt">
+. </EM>
+</LI>
+</UL>
+</UL>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=603830">
+ </A>
+DRAMs</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=603831">
+ </A>
+<EM CLASS="StdFmt">
+TI TMS4464 DRAM (64K X 4):</EM>
+</LI>
+</UL>
+<DIV>
+<IMG SRC="http://web.archive.org/web/20080621153851im_/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1-5.gif">
+</DIV>
+<UL>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=603828">
+ </A>
+<EM CLASS="StdFmt">
+The TMS4464 can store a total of 256K bits of data.</EM>
+</LI>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=604104">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=604101">
+ </A>
+<EM CLASS="StdFmt">
+ It has </EM>
+<Strong CLASS="BoldFmt">
+64K</Strong>
+<EM CLASS="StdFmt">
+ addressable locations which means it needs </EM>
+<Strong CLASS="BoldFmt">
+16 </Strong>
+<EM CLASS="StdFmt">
+address inputs, but it has only </EM>
+<Strong CLASS="BoldFmt">
+8</Strong>
+<EM CLASS="StdFmt">
+.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=604102">
+ </A>
+<EM CLASS="StdFmt">
+The row address (A</EM>
+<Sub CLASS="SubFmt">
+0</Sub>
+<EM CLASS="StdFmt">
+ through A</EM>
+<Sub CLASS="SubFmt">
+7</Sub>
+<EM CLASS="StdFmt">
+) are placed on the address pins and strobed into a set of internal latches.</EM>
+</LI>
+<LI CLASS="Indent3">
+<A NAME="pgfId=604105">
+ </A>
+<EM CLASS="StdFmt">
+The column addres (A</EM>
+<Sub CLASS="SubFmt">
+8</Sub>
+<EM CLASS="StdFmt">
+ through A</EM>
+<Sub CLASS="SubFmt">
+15</Sub>
+<EM CLASS="StdFmt">
+) is then strobed in using CAS.</EM>
+</LI>
+</UL>
+</UL>
+</UL>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=604112">
+ </A>
+DRAMs</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=604110">
+ </A>
+<EM CLASS="StdFmt">
+TI TMS4464 DRAM (64K X 4) Timing Diagram:</EM>
+</LI>
+</UL>
+<DIV>
+<IMG SRC="http://web.archive.org/web/20080621153851im_/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1-6.gif">
+</DIV>
+<UL>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=604103">
+ </A>
+CAS <EM CLASS="StdFmt">
+also performs the function of the chip select input.</EM>
+</LI>
+</UL>
+</UL>
+<DIV>
+<IMG SRC="http://web.archive.org/web/20080621153851im_/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1-7.gif">
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=604741">
+ </A>
+DRAMs</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=604459">
+ </A>
+<EM CLASS="StdFmt">
+Larger DRAMs are available which are organized as </EM>
+<EM CLASS="ItalicFmt">
+1M X 1</EM>
+<EM CLASS="StdFmt">
+, </EM>
+<EM CLASS="ItalicFmt">
+4M X 1</EM>
+<EM CLASS="StdFmt">
+, </EM>
+<EM CLASS="ItalicFmt">
+16M X 1</EM>
+<EM CLASS="StdFmt">
+, </EM>
+<EM CLASS="ItalicFmt">
+64M X 1</EM>
+<EM CLASS="StdFmt">
+ (with </EM>
+<EM CLASS="ItalicFmt">
+256M X 1</EM>
+<EM CLASS="StdFmt">
+ available soon).</EM>
+</LI>
+<LI CLASS="Indent1">
+<A NAME="pgfId=604768">
+ </A>
+<EM CLASS="StdFmt">
+DRAMs are typically placed on SIMM (Single In-line Memory Modules) boards.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=604769">
+ </A>
+<Strong CLASS="BoldFmt">
+30-pin</Strong>
+<EM CLASS="StdFmt">
+ SIMMs come in </EM>
+<EM CLASS="ItalicFmt">
+1M X 8</EM>
+<EM CLASS="StdFmt">
+, </EM>
+<EM CLASS="ItalicFmt">
+1M X 9 </EM>
+<EM CLASS="StdFmt">
+(parity),</EM>
+<EM CLASS="ItalicFmt">
+ 4M X 8</EM>
+<EM CLASS="StdFmt">
+, </EM>
+<EM CLASS="ItalicFmt">
+4M X 9</EM>
+<EM CLASS="StdFmt">
+.</EM>
+</LI>
+<LI CLASS="Indent2">
+<A NAME="pgfId=604774">
+ </A>
+<Strong CLASS="BoldFmt">
+72-pin</Strong>
+<EM CLASS="StdFmt">
+ SIMMs come in </EM>
+<EM CLASS="ItalicFmt">
+1</EM>
+<EM CLASS="StdFmt">
+/</EM>
+<EM CLASS="ItalicFmt">
+2</EM>
+<EM CLASS="StdFmt">
+/</EM>
+<EM CLASS="ItalicFmt">
+3</EM>
+<EM CLASS="StdFmt">
+/</EM>
+<EM CLASS="ItalicFmt">
+8</EM>
+<EM CLASS="StdFmt">
+/</EM>
+<EM CLASS="ItalicFmt">
+16M X 32 </EM>
+<EM CLASS="StdFmt">
+or </EM>
+<EM CLASS="ItalicFmt">
+1M X 36</EM>
+<EM CLASS="StdFmt">
+ (parity).</EM>
+</LI>
+</UL>
+</UL>
+<DIV>
+<IMG SRC="http://web.archive.org/web/20080621153851im_/http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1-8.gif">
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="header1">
+<A NAME="pgfId=605282">
+ </A>
+DRAMs</H2>
+<UL>
+<LI CLASS="Indent1">
+<A NAME="pgfId=605276">
+ </A>
+<EM CLASS="StdFmt">
+Pentiums have a 64-bit wide data bus.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=605309">
+ </A>
+<EM CLASS="StdFmt">
+The </EM>
+<Strong CLASS="BoldFmt">
+30-pin </Strong>
+<EM CLASS="StdFmt">
+and </EM>
+<Strong CLASS="BoldFmt">
+72-pin</Strong>
+<EM CLASS="StdFmt">
+ SIMMs are not used on these systems.</EM>
+</LI>
+<LI CLASS="Indent2">
+<A NAME="pgfId=605310">
+ </A>
+<EM CLASS="StdFmt">
+Rather, </EM>
+<Strong CLASS="BoldFmt">
+64-bit DIMMs</Strong>
+<EM CLASS="StdFmt">
+ (</EM>
+<EM CLASS="ItalicFmt">
+Dual In-line Memory Modules)</EM>
+<EM CLASS="StdFmt">
+ are the standard.</EM>
+</LI>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=605311">
+ </A>
+<EM CLASS="StdFmt">
+These organize the memory 64-bits wide.</EM>
+</LI>
+<LI CLASS="Indent3">
+<A NAME="pgfId=605322">
+ </A>
+<EM CLASS="StdFmt">
+The board has DRAMs mounted on both sides and is </EM>
+<Strong CLASS="BoldFmt">
+168</Strong>
+<EM CLASS="StdFmt">
+ pins.</EM>
+</LI>
+</UL>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=605312">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=605313">
+ </A>
+<EM CLASS="StdFmt">
+Sizes include </EM>
+<EM CLASS="ItalicFmt">
+2M X 64</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+<Strong CLASS="BoldFmt">
+16M</Strong>
+<EM CLASS="StdFmt">
+), </EM>
+<EM CLASS="ItalicFmt">
+4M X 64</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+<Strong CLASS="BoldFmt">
+32M</Strong>
+<EM CLASS="StdFmt">
+), </EM>
+<EM CLASS="ItalicFmt">
+8M X 64</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+<Strong CLASS="BoldFmt">
+64M</Strong>
+<EM CLASS="StdFmt">
+) and </EM>
+<EM CLASS="ItalicFmt">
+16M X 64</EM>
+<EM CLASS="StdFmt">
+ (</EM>
+<Strong CLASS="BoldFmt">
+128M</Strong>
+<EM CLASS="StdFmt">
+).</EM>
+</LI>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=605317">
+ </A>
+<EM CLASS="StdFmt">
+</EM>
+&nbsp;</P>
+<UL>
+<UL>
+<LI CLASS="Indent2">
+<A NAME="pgfId=605318">
+ </A>
+<EM CLASS="StdFmt">
+The DIMM module is available in </EM>
+<Strong CLASS="BoldFmt">
+DRAM</Strong>
+<EM CLASS="StdFmt">
+, </EM>
+<Strong CLASS="BoldFmt">
+EDO</Strong>
+<EM CLASS="StdFmt">
+ and </EM>
+<Strong CLASS="BoldFmt">
+SDRAM</Strong>
+<EM CLASS="StdFmt">
+ (and </EM>
+<Strong CLASS="BoldFmt">
+NVRAM</Strong>
+<EM CLASS="StdFmt">
+) with and without an EPROM.</EM>
+</LI>
+</UL>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=605343">
+ </A>
+&nbsp;</P>
+<UL>
+<UL>
+<UL>
+<LI CLASS="Indent3">
+<A NAME="pgfId=605319">
+ </A>
+<EM CLASS="StdFmt">
+The EPROM provides information abou the size and speed of the memory device for PNP applications.</EM>
+</LI>
+</UL>
+</UL>
+</UL>
+</DIV>
+</BODY>
+</HTML>
+
+<!--
+     FILE ARCHIVED ON 15:38:51 Jun 21, 2008 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 20:55:15 Jun 9, 2011.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+
+<font color="red"><B> Originally posted at http://www.csee.umbc.edu/~plusquel/310/slides/8086_memory1.html<B> </font>
