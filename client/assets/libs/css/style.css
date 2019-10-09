@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /**
  * Summary:
  *
@@ -6971,7 +6971,11 @@ Media Query
     padding: 17px 29px;}
 }
 
-
+.scroll
+{
+max-height: 800px;
+    overflow-y: auto;
+}
 
 
 /* Custom, iPhone Retina */
